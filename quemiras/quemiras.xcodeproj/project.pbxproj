@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ABD885574BE50DF103464D2 /* Pods_quemirasTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74806CEA64C89868AFDBA63 /* Pods_quemirasTests.framework */; };
+		5ECA44592ACA246B77C6C00D /* Pods_quemiras_quemirasUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E235F36D2629007B699F96 /* Pods_quemiras_quemirasUITests.framework */; };
+		83C774329C187922CDBD3A84 /* Pods_quemiras.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9020A4605389EFF16BFD20B /* Pods_quemiras.framework */; };
 		FB44F60A2482E6CE00C0D1E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44F6092482E6CE00C0D1E3 /* AppDelegate.swift */; };
 		FB44F60C2482E6CE00C0D1E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44F60B2482E6CE00C0D1E3 /* SceneDelegate.swift */; };
-		FB44F60E2482E6CE00C0D1E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44F60D2482E6CE00C0D1E3 /* ViewController.swift */; };
+		FB44F60E2482E6CE00C0D1E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44F60D2482E6CE00C0D1E3 /* LoginViewController.swift */; };
 		FB44F6112482E6CE00C0D1E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB44F60F2482E6CE00C0D1E3 /* Main.storyboard */; };
 		FB44F6132482E6D200C0D1E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB44F6122482E6D200C0D1E3 /* Assets.xcassets */; };
 		FB44F6162482E6D200C0D1E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB44F6142482E6D200C0D1E3 /* LaunchScreen.storyboard */; };
@@ -35,10 +38,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18E235F36D2629007B699F96 /* Pods_quemiras_quemirasUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quemiras_quemirasUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C1494A961B4541F14B914C7 /* Pods-quemirasTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quemirasTests.release.xcconfig"; path = "Target Support Files/Pods-quemirasTests/Pods-quemirasTests.release.xcconfig"; sourceTree = "<group>"; };
+		7B4106640C7191B1BBB3223C /* Pods-quemirasTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quemirasTests.debug.xcconfig"; path = "Target Support Files/Pods-quemirasTests/Pods-quemirasTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D56A0006A8A0AF88E7742D3 /* Pods-quemiras.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quemiras.debug.xcconfig"; path = "Target Support Files/Pods-quemiras/Pods-quemiras.debug.xcconfig"; sourceTree = "<group>"; };
+		B74806CEA64C89868AFDBA63 /* Pods_quemirasTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quemirasTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9020A4605389EFF16BFD20B /* Pods_quemiras.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quemiras.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C43504982F6D26A3B70264 /* Pods-quemiras-quemirasUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quemiras-quemirasUITests.debug.xcconfig"; path = "Target Support Files/Pods-quemiras-quemirasUITests/Pods-quemiras-quemirasUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D2770D65E15FDECD02879DBF /* Pods-quemiras-quemirasUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quemiras-quemirasUITests.release.xcconfig"; path = "Target Support Files/Pods-quemiras-quemirasUITests/Pods-quemiras-quemirasUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D77252CFC7EBA0DE7AC56634 /* Pods-quemiras.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quemiras.release.xcconfig"; path = "Target Support Files/Pods-quemiras/Pods-quemiras.release.xcconfig"; sourceTree = "<group>"; };
 		FB44F6062482E6CD00C0D1E3 /* quemiras.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quemiras.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB44F6092482E6CE00C0D1E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB44F60B2482E6CE00C0D1E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FB44F60D2482E6CE00C0D1E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB44F60D2482E6CE00C0D1E3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FB44F6102482E6CE00C0D1E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB44F6122482E6D200C0D1E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB44F6152482E6D200C0D1E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C774329C187922CDBD3A84 /* Pods_quemiras.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABD885574BE50DF103464D2 /* Pods_quemirasTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ECA44592ACA246B77C6C00D /* Pods_quemiras_quemirasUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A58414B174578C3AA2A0519F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9020A4605389EFF16BFD20B /* Pods_quemiras.framework */,
+				18E235F36D2629007B699F96 /* Pods_quemiras_quemirasUITests.framework */,
+				B74806CEA64C89868AFDBA63 /* Pods_quemirasTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0D26C15413084C6CB9A431D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D56A0006A8A0AF88E7742D3 /* Pods-quemiras.debug.xcconfig */,
+				D77252CFC7EBA0DE7AC56634 /* Pods-quemiras.release.xcconfig */,
+				C8C43504982F6D26A3B70264 /* Pods-quemiras-quemirasUITests.debug.xcconfig */,
+				D2770D65E15FDECD02879DBF /* Pods-quemiras-quemirasUITests.release.xcconfig */,
+				7B4106640C7191B1BBB3223C /* Pods-quemirasTests.debug.xcconfig */,
+				3C1494A961B4541F14B914C7 /* Pods-quemirasTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FB44F5FD2482E6CD00C0D1E3 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +121,8 @@
 				FB44F61F2482E6D200C0D1E3 /* quemirasTests */,
 				FB44F62A2482E6D200C0D1E3 /* quemirasUITests */,
 				FB44F6072482E6CD00C0D1E3 /* Products */,
+				E0D26C15413084C6CB9A431D /* Pods */,
+				A58414B174578C3AA2A0519F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +141,7 @@
 			children = (
 				FB44F6092482E6CE00C0D1E3 /* AppDelegate.swift */,
 				FB44F60B2482E6CE00C0D1E3 /* SceneDelegate.swift */,
-				FB44F60D2482E6CE00C0D1E3 /* ViewController.swift */,
+				FB44F60D2482E6CE00C0D1E3 /* LoginViewController.swift */,
 				FB44F60F2482E6CE00C0D1E3 /* Main.storyboard */,
 				FB44F6122482E6D200C0D1E3 /* Assets.xcassets */,
 				FB44F6142482E6D200C0D1E3 /* LaunchScreen.storyboard */,
@@ -135,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB44F6302482E6D200C0D1E3 /* Build configuration list for PBXNativeTarget "quemiras" */;
 			buildPhases = (
+				E5763375814321060C44B417 /* [CP] Check Pods Manifest.lock */,
 				FB44F6022482E6CD00C0D1E3 /* Sources */,
 				FB44F6032482E6CD00C0D1E3 /* Frameworks */,
 				FB44F6042482E6CD00C0D1E3 /* Resources */,
+				259B9859222634D7FA65AAA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB44F6332482E6D200C0D1E3 /* Build configuration list for PBXNativeTarget "quemirasTests" */;
 			buildPhases = (
+				14063052552AA50995087421 /* [CP] Check Pods Manifest.lock */,
 				FB44F6182482E6D200C0D1E3 /* Sources */,
 				FB44F6192482E6D200C0D1E3 /* Frameworks */,
 				FB44F61A2482E6D200C0D1E3 /* Resources */,
@@ -170,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB44F6362482E6D200C0D1E3 /* Build configuration list for PBXNativeTarget "quemirasUITests" */;
 			buildPhases = (
+				F745267E6B72E848D5B35C47 /* [CP] Check Pods Manifest.lock */,
 				FB44F6232482E6D200C0D1E3 /* Sources */,
 				FB44F6242482E6D200C0D1E3 /* Frameworks */,
 				FB44F6252482E6D200C0D1E3 /* Resources */,
+				16B959A5084B32A2C7E5C831 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,12 +299,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14063052552AA50995087421 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-quemirasTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16B959A5084B32A2C7E5C831 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quemiras-quemirasUITests/Pods-quemiras-quemirasUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quemiras-quemirasUITests/Pods-quemiras-quemirasUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-quemiras-quemirasUITests/Pods-quemiras-quemirasUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		259B9859222634D7FA65AAA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quemiras/Pods-quemiras-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-quemiras/Pods-quemiras-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-quemiras/Pods-quemiras-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5763375814321060C44B417 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-quemiras-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F745267E6B72E848D5B35C47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-quemiras-quemirasUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FB44F6022482E6CD00C0D1E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB44F60E2482E6CE00C0D1E3 /* ViewController.swift in Sources */,
+				FB44F60E2482E6CE00C0D1E3 /* LoginViewController.swift in Sources */,
 				FB44F60A2482E6CE00C0D1E3 /* AppDelegate.swift in Sources */,
 				FB44F60C2482E6CE00C0D1E3 /* SceneDelegate.swift in Sources */,
 			);
@@ -432,6 +580,7 @@
 		};
 		FB44F6312482E6D200C0D1E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D56A0006A8A0AF88E7742D3 /* Pods-quemiras.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +599,7 @@
 		};
 		FB44F6322482E6D200C0D1E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D77252CFC7EBA0DE7AC56634 /* Pods-quemiras.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +618,7 @@
 		};
 		FB44F6342482E6D200C0D1E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B4106640C7191B1BBB3223C /* Pods-quemirasTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +641,7 @@
 		};
 		FB44F6352482E6D200C0D1E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C1494A961B4541F14B914C7 /* Pods-quemirasTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +664,7 @@
 		};
 		FB44F6372482E6D200C0D1E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8C43504982F6D26A3B70264 /* Pods-quemiras-quemirasUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +685,7 @@
 		};
 		FB44F6382482E6D200C0D1E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2770D65E15FDECD02879DBF /* Pods-quemiras-quemirasUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_quemiras {
+  umbrella header "Pods-quemiras-umbrella.h"
+
+  export *
+  module * { export * }
+}
