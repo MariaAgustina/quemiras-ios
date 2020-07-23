@@ -9,6 +9,8 @@
 import UIKit
 import FBSDKCoreKit
 
+public let apikey : String = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNTlmN2VmOGMzYzg0OTNmMzA1OWZjNDU0ZDJiNDk2MyIsInN1YiI6IjVlZTYzM2EwY2I3MWI4MDAxY2I2YzFhYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Suae6ei725YTGq7BinYGI6p2FSY6dET8pL3CfW8zUWg"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -25,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-    func application( _ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? ) -> Bool { ApplicationDelegate.shared.application( application, didFinishLaunchingWithOptions: launchOptions )
+    func application( _ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? ) -> Bool { ApplicationDelegate.shared.application( application, didFinishLaunchingWithOptions: launchOptions )        
         return true
         
     }

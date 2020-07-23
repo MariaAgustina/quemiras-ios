@@ -30,7 +30,9 @@ extension LoginViewController : LoginButtonDelegate {
         
         if let token = AccessToken.current, !token.isExpired {
             print("User logged in: ", token.userID)
-            //TODO: push profile or select film vc
+            //TODO: logic of profileviewcontroller
+            let moviewViewController = ProfileViewController()
+            self.navigationController?.pushViewController(moviewViewController, animated: true)
         }
     }
     

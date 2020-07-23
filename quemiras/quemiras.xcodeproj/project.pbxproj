@@ -18,6 +18,26 @@
 		FB44F6162482E6D200C0D1E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB44F6142482E6D200C0D1E3 /* LaunchScreen.storyboard */; };
 		FB44F6212482E6D200C0D1E3 /* quemirasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44F6202482E6D200C0D1E3 /* quemirasTests.swift */; };
 		FB44F62C2482E6D200C0D1E3 /* quemirasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44F62B2482E6D200C0D1E3 /* quemirasUITests.swift */; };
+		FB48540124C8F55300C3F5E2 /* MovieGenreAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48540024C8F55300C3F5E2 /* MovieGenreAdapter.swift */; };
+		FB48540524C9032800C3F5E2 /* SelectPreferenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48540324C9032800C3F5E2 /* SelectPreferenceTableViewCell.swift */; };
+		FB48540624C9032800C3F5E2 /* SelectPreferenceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB48540424C9032800C3F5E2 /* SelectPreferenceTableViewCell.xib */; };
+		FB48540824C9078300C3F5E2 /* PreferenceToSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48540724C9078300C3F5E2 /* PreferenceToSelect.swift */; };
+		FB48540A24C9079800C3F5E2 /* ProfilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48540924C9079800C3F5E2 /* ProfilePreference.swift */; };
+		FB48540D24C9189D00C3F5E2 /* SelectGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48540B24C9189D00C3F5E2 /* SelectGenreViewController.swift */; };
+		FB48540E24C9189D00C3F5E2 /* SelectGenreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB48540C24C9189D00C3F5E2 /* SelectGenreViewController.xib */; };
+		FB48541024C91A7400C3F5E2 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48540F24C91A7400C3F5E2 /* UIViewController+Loading.swift */; };
+		FB48541324C91ED900C3F5E2 /* MovieGenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48541124C91ED900C3F5E2 /* MovieGenreTableViewCell.swift */; };
+		FB48541424C91ED900C3F5E2 /* MovieGenreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB48541224C91ED900C3F5E2 /* MovieGenreTableViewCell.xib */; };
+		FB4F10C824C7756E003625B4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10C624C7756E003625B4 /* ProfileViewController.swift */; };
+		FB4F10C924C7756E003625B4 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB4F10C724C7756E003625B4 /* ProfileViewController.xib */; };
+		FB4F10CC24C795F5003625B4 /* MoviesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10CB24C795F5003625B4 /* MoviesArray.swift */; };
+		FB4F10CE24C796A8003625B4 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10CD24C796A8003625B4 /* Movie.swift */; };
+		FB4F10D024C79E83003625B4 /* MovieDiscoverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10CF24C79E83003625B4 /* MovieDiscoverService.swift */; };
+		FB4F10D324C7B007003625B4 /* RecommendedMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10D124C7B007003625B4 /* RecommendedMovieViewController.swift */; };
+		FB4F10D424C7B007003625B4 /* RecommendedMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB4F10D224C7B007003625B4 /* RecommendedMovieViewController.xib */; };
+		FB4F10D924C8EB9D003625B4 /* UserMoviePreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10D824C8EB9D003625B4 /* UserMoviePreferences.swift */; };
+		FB4F10DC24C8EE00003625B4 /* MovieGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10DB24C8EE00003625B4 /* MovieGenre.swift */; };
+		FB4F10DE24C8EE3B003625B4 /* MovieGenresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10DD24C8EE3B003625B4 /* MovieGenresService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +81,26 @@
 		FB44F6272482E6D200C0D1E3 /* quemirasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = quemirasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB44F62B2482E6D200C0D1E3 /* quemirasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quemirasUITests.swift; sourceTree = "<group>"; };
 		FB44F62D2482E6D200C0D1E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB48540024C8F55300C3F5E2 /* MovieGenreAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenreAdapter.swift; sourceTree = "<group>"; };
+		FB48540324C9032800C3F5E2 /* SelectPreferenceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPreferenceTableViewCell.swift; sourceTree = "<group>"; };
+		FB48540424C9032800C3F5E2 /* SelectPreferenceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPreferenceTableViewCell.xib; sourceTree = "<group>"; };
+		FB48540724C9078300C3F5E2 /* PreferenceToSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceToSelect.swift; sourceTree = "<group>"; };
+		FB48540924C9079800C3F5E2 /* ProfilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreference.swift; sourceTree = "<group>"; };
+		FB48540B24C9189D00C3F5E2 /* SelectGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreViewController.swift; sourceTree = "<group>"; };
+		FB48540C24C9189D00C3F5E2 /* SelectGenreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectGenreViewController.xib; sourceTree = "<group>"; };
+		FB48540F24C91A7400C3F5E2 /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
+		FB48541124C91ED900C3F5E2 /* MovieGenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenreTableViewCell.swift; sourceTree = "<group>"; };
+		FB48541224C91ED900C3F5E2 /* MovieGenreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieGenreTableViewCell.xib; sourceTree = "<group>"; };
+		FB4F10C624C7756E003625B4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FB4F10C724C7756E003625B4 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		FB4F10CB24C795F5003625B4 /* MoviesArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesArray.swift; sourceTree = "<group>"; };
+		FB4F10CD24C796A8003625B4 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		FB4F10CF24C79E83003625B4 /* MovieDiscoverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDiscoverService.swift; sourceTree = "<group>"; };
+		FB4F10D124C7B007003625B4 /* RecommendedMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedMovieViewController.swift; sourceTree = "<group>"; };
+		FB4F10D224C7B007003625B4 /* RecommendedMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendedMovieViewController.xib; sourceTree = "<group>"; };
+		FB4F10D824C8EB9D003625B4 /* UserMoviePreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMoviePreferences.swift; sourceTree = "<group>"; };
+		FB4F10DB24C8EE00003625B4 /* MovieGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenre.swift; sourceTree = "<group>"; };
+		FB4F10DD24C8EE3B003625B4 /* MovieGenresService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenresService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,9 +179,15 @@
 		FB44F6082482E6CD00C0D1E3 /* quemiras */ = {
 			isa = PBXGroup;
 			children = (
+				FB48540224C902E300C3F5E2 /* ProfilePreferences */,
+				FB4F10D724C8EB80003625B4 /* Users */,
+				FB4F10CA24C795C3003625B4 /* Movies */,
 				FB44F6092482E6CE00C0D1E3 /* AppDelegate.swift */,
 				FB44F60B2482E6CE00C0D1E3 /* SceneDelegate.swift */,
 				FB44F60D2482E6CE00C0D1E3 /* LoginViewController.swift */,
+				FB4F10C624C7756E003625B4 /* ProfileViewController.swift */,
+				FB48540F24C91A7400C3F5E2 /* UIViewController+Loading.swift */,
+				FB4F10C724C7756E003625B4 /* ProfileViewController.xib */,
 				FB44F60F2482E6CE00C0D1E3 /* Main.storyboard */,
 				FB44F6122482E6D200C0D1E3 /* Assets.xcassets */,
 				FB44F6142482E6D200C0D1E3 /* LaunchScreen.storyboard */,
@@ -166,6 +212,52 @@
 				FB44F62D2482E6D200C0D1E3 /* Info.plist */,
 			);
 			path = quemirasUITests;
+			sourceTree = "<group>";
+		};
+		FB48540224C902E300C3F5E2 /* ProfilePreferences */ = {
+			isa = PBXGroup;
+			children = (
+				FB48540324C9032800C3F5E2 /* SelectPreferenceTableViewCell.swift */,
+				FB48540724C9078300C3F5E2 /* PreferenceToSelect.swift */,
+				FB48540924C9079800C3F5E2 /* ProfilePreference.swift */,
+				FB48540424C9032800C3F5E2 /* SelectPreferenceTableViewCell.xib */,
+			);
+			path = ProfilePreferences;
+			sourceTree = "<group>";
+		};
+		FB4F10CA24C795C3003625B4 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				FB4F10DA24C8EDEE003625B4 /* Genre */,
+				FB4F10CB24C795F5003625B4 /* MoviesArray.swift */,
+				FB4F10CD24C796A8003625B4 /* Movie.swift */,
+				FB4F10CF24C79E83003625B4 /* MovieDiscoverService.swift */,
+				FB4F10D124C7B007003625B4 /* RecommendedMovieViewController.swift */,
+				FB4F10D224C7B007003625B4 /* RecommendedMovieViewController.xib */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
+		FB4F10D724C8EB80003625B4 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				FB4F10D824C8EB9D003625B4 /* UserMoviePreferences.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		FB4F10DA24C8EDEE003625B4 /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+				FB4F10DB24C8EE00003625B4 /* MovieGenre.swift */,
+				FB48540B24C9189D00C3F5E2 /* SelectGenreViewController.swift */,
+				FB48541124C91ED900C3F5E2 /* MovieGenreTableViewCell.swift */,
+				FB48541224C91ED900C3F5E2 /* MovieGenreTableViewCell.xib */,
+				FB48540C24C9189D00C3F5E2 /* SelectGenreViewController.xib */,
+				FB48540024C8F55300C3F5E2 /* MovieGenreAdapter.swift */,
+				FB4F10DD24C8EE3B003625B4 /* MovieGenresService.swift */,
+			);
+			path = Genre;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,9 +369,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB48541424C91ED900C3F5E2 /* MovieGenreTableViewCell.xib in Resources */,
 				FB44F6162482E6D200C0D1E3 /* LaunchScreen.storyboard in Resources */,
 				FB44F6132482E6D200C0D1E3 /* Assets.xcassets in Resources */,
+				FB48540E24C9189D00C3F5E2 /* SelectGenreViewController.xib in Resources */,
+				FB48540624C9032800C3F5E2 /* SelectPreferenceTableViewCell.xib in Resources */,
 				FB44F6112482E6CE00C0D1E3 /* Main.storyboard in Resources */,
+				FB4F10C924C7756E003625B4 /* ProfileViewController.xib in Resources */,
+				FB4F10D424C7B007003625B4 /* RecommendedMovieViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,9 +504,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB4F10D024C79E83003625B4 /* MovieDiscoverService.swift in Sources */,
+				FB48540524C9032800C3F5E2 /* SelectPreferenceTableViewCell.swift in Sources */,
+				FB48540A24C9079800C3F5E2 /* ProfilePreference.swift in Sources */,
+				FB4F10D324C7B007003625B4 /* RecommendedMovieViewController.swift in Sources */,
+				FB48541024C91A7400C3F5E2 /* UIViewController+Loading.swift in Sources */,
+				FB48540824C9078300C3F5E2 /* PreferenceToSelect.swift in Sources */,
+				FB4F10DC24C8EE00003625B4 /* MovieGenre.swift in Sources */,
+				FB4F10CC24C795F5003625B4 /* MoviesArray.swift in Sources */,
+				FB4F10D924C8EB9D003625B4 /* UserMoviePreferences.swift in Sources */,
 				FB44F60E2482E6CE00C0D1E3 /* LoginViewController.swift in Sources */,
+				FB48541324C91ED900C3F5E2 /* MovieGenreTableViewCell.swift in Sources */,
+				FB4F10CE24C796A8003625B4 /* Movie.swift in Sources */,
+				FB48540D24C9189D00C3F5E2 /* SelectGenreViewController.swift in Sources */,
 				FB44F60A2482E6CE00C0D1E3 /* AppDelegate.swift in Sources */,
+				FB48540124C8F55300C3F5E2 /* MovieGenreAdapter.swift in Sources */,
 				FB44F60C2482E6CE00C0D1E3 /* SceneDelegate.swift in Sources */,
+				FB4F10C824C7756E003625B4 /* ProfileViewController.swift in Sources */,
+				FB4F10DE24C8EE3B003625B4 /* MovieGenresService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

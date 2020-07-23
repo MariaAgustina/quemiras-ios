@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,6 +19,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        var initialViewController : UIViewController
+        if let token = AccessToken.current, !token.isExpired {
+            //TODO: profile logic
+            initialViewController = ProfileViewController(nibName:"ProfileViewController",bundle: nil)
+        }else{
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+           initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        }
+        let rootNC = UINavigationController(rootViewController: initialViewController)
+        self.window?.rootViewController = rootNC
+        self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
