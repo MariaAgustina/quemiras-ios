@@ -40,7 +40,5 @@ extension LoginViewController : LoginButtonDelegate {
         print("User logged out")
 
     }
-    
-    
 }
     

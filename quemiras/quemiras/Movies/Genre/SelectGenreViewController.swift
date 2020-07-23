@@ -8,25 +8,31 @@
 
 import UIKit
 
+public protocol SelectGenreProtocol {
+    func movieGenresDidChange(movieGenres: MovieGenres)
+}
+
 class SelectGenreViewController: LoadingViewController {
 
     @IBOutlet weak var genreTableView: UITableView!
-    var movieGenres : MovieGenres? = nil
+    var movieGenres : MovieGenres = MovieGenres(genres: [])
+    var delegate : SelectGenreProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         genreTableView.register(UINib(nibName: "MovieGenreTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieGenreTableViewCell")
-        getMovieGenres()
+        getMovieGenresIfNeeded()
 
     }
 
     
-    func getMovieGenres(){
-        
-        let movieGenresService : MovieGenresService = MovieGenresService()
-        movieGenresService.delegate = self
-        movieGenresService.getMovieGenres()
-        self.showActivityIndicator()
+    func getMovieGenresIfNeeded(){
+        if movieGenres.genres.count == 0{
+            let movieGenresService : MovieGenresService = MovieGenresService()
+            movieGenresService.delegate = self
+            movieGenresService.getMovieGenres()
+            self.showActivityIndicator()
+        }
     }
 }
 
@@ -36,9 +42,6 @@ extension SelectGenreViewController: MovieGenreProtocol{
         self.hideActivityIndicartor()
         self.movieGenres = genres
         self.genreTableView.reloadData()
-        print("genresSucceded")
-        //TODO: seleccionables desde el usuario (front end), por ahora hardcodedado
-//        self.userMoviePreferences.selectedGenres = [genres.genres[0],genres.genres[1]]
         
     }
     
@@ -50,23 +53,28 @@ extension SelectGenreViewController: MovieGenreProtocol{
 
 extension SelectGenreViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if var movieGenre : MovieGenre = self.movieGenres?.genres[indexPath.row]{
-            movieGenre.isSelected = !(movieGenre.isSelected ?? false)
-        }
+        var movieGenre : MovieGenre = self.movieGenres.genres[indexPath.row]
+        let movieGenreIsSelectedValue = movieGenre.isSelected ?? false
+        movieGenre.isSelected = !(movieGenreIsSelectedValue)
+        self.movieGenres.genres[indexPath.row] = movieGenre
+        
+        self.delegate?.movieGenresDidChange(movieGenres: self.movieGenres)
+        self.genreTableView.reloadData()
     }
 }
 
 extension SelectGenreViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.movieGenres?.genres.count ?? 0
+        self.movieGenres.genres.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        if let movieGenre : MovieGenre = self.movieGenres?.genres[indexPath.row], let cell = tableView.dequeueReusableCell(withIdentifier: "MovieGenreTableViewCell") as? MovieGenreTableViewCell {
+        let movieGenre : MovieGenre = self.movieGenres.genres[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MovieGenreTableViewCell") as? MovieGenreTableViewCell {
             cell.genreTitle.text = movieGenre.name
-            cell.isSelectedImageView.isHidden = !(movieGenre.isSelected ?? false)
+            let movieGenreIsSelectedValue = movieGenre.isSelected ?? false
+            cell.isSelectedImageView.isHidden = !(movieGenreIsSelectedValue)
             return cell
         }
 

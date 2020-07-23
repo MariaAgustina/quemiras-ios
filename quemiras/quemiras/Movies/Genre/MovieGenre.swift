@@ -15,5 +15,8 @@ public struct MovieGenre : Codable {
 }
 
 public struct MovieGenres: Codable {
-    let genres: Array<MovieGenre>
+    var genres: Array<MovieGenre>
+    init(genres:  Array<MovieGenre>) {
+        self.genres = genres
+    }
 }

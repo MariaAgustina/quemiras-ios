@@ -27,6 +27,6 @@ class UserMoviePreferences {
     //popularidad: con el sort by las ordenamos por popularidad o menos popular
     
     //1
-    var selectedGenres : Array<MovieGenre> = []
+    var movieGenres : MovieGenres = MovieGenres(genres: [])
     
 }

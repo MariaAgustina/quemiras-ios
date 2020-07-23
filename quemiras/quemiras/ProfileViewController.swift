@@ -9,7 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: LoadingViewController {
 
     @IBOutlet weak var loginButtonContentView: UIView!
     @IBOutlet weak var profileTitle: UILabel!
@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController {
 
 
     @IBAction func movieButtonPressed(_ sender: Any) {
-        
+        self.showActivityIndicator()
         let service : MovieDiscoverService = MovieDiscoverService()
         service.delegate = self
         service.discoverMovies(userPreferences:self.userMoviePreferences)
@@ -66,14 +66,17 @@ extension ProfileViewController : LoginButtonDelegate {
 
 extension ProfileViewController : MovieDiscoverProtocol{
     func movieDiscoverSucceded(moviesArray: MoviesArray){
+        self.hideActivityIndicartor()
         let recommendedMovieViewController: RecommendedMovieViewController =
             RecommendedMovieViewController(nibName:"RecommendedMovieViewController",bundle: nil)
-        recommendedMovieViewController.movie = moviesArray.results[6]
+        
+        //TODO: heuristica
+        recommendedMovieViewController.movie = moviesArray.results[0]
         self.navigationController?.pushViewController(recommendedMovieViewController, animated: true)
     }
     
     func movieDiscoverFailed(error: Error){
-        //TODO
+        self.hideActivityIndicartor()
     }
 }
 
@@ -86,6 +89,8 @@ extension ProfileViewController : UITableViewDelegate{
         case .selectGenre:
             let selectGenreViewController: SelectGenreViewController =
                 SelectGenreViewController(nibName:"SelectGenreViewController",bundle: nil)
+            selectGenreViewController.movieGenres = self.userMoviePreferences.movieGenres
+            selectGenreViewController.delegate = self
             self.navigationController?.pushViewController(selectGenreViewController, animated: true)
         default:
             print("do nothing")
@@ -112,6 +117,13 @@ extension ProfileViewController : UITableViewDataSource{
         }
 
         return UITableViewCell()
+    }
+    
+}
+
+extension ProfileViewController : SelectGenreProtocol{
+    func movieGenresDidChange(movieGenres: MovieGenres) {
+        self.userMoviePreferences.movieGenres = movieGenres
     }
     
     

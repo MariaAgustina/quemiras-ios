@@ -24,10 +24,11 @@ class MovieDiscoverService: NSObject {
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFJSONResponseSerializer()
         
+        let selectedGenres = userPreferences.movieGenres.genres.filter { $0.isSelected == true }
         let params = [
             "language": "es",
             "include_adult":"false",
-            "with_genres" : MovieGenreAdapter.getMovieGenresParams(selectedGenres: userPreferences.selectedGenres)
+            "with_genres" : MovieGenreAdapter.getMovieGenresParams(selectedGenres: selectedGenres)
             ]
         
         let headers = ["Authorization":apikey,
