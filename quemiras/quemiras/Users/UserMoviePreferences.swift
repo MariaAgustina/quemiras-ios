@@ -32,5 +32,7 @@ class UserMoviePreferences {
     var movieGenres : MovieGenres = MovieGenres(genres: [])
     var fromReleaseDate : String?
     var untilReleaseDate : String?
+    var mostPopular : Bool = true
+    var runtime : String = "90"
 
 }

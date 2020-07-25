@@ -29,15 +29,19 @@ class ProfileViewController: LoadingViewController {
         loginButton.autoPinEdgesToSuperviewMargins()
         loginButton.delegate = self
         
-        profilePreferencesTableView.register(UINib(nibName: "SelectPreferenceTableViewCell", bundle: nil), forCellReuseIdentifier: "SelectPreferenceTableViewCell")
-        
         self.profileTitle.text = "¡Bienvenido!"
         self.preferenceToSelect = PreferenceToSelect()
+        setupProfilePreferenceTableView()
         
         //TODO: obtener estas preferencias desde backend
         self.userMoviePreferences = UserMoviePreferences()
     }
     
+    func setupProfilePreferenceTableView(){
+        profilePreferencesTableView.register(UINib(nibName: "SelectPreferenceTableViewCell", bundle: nil), forCellReuseIdentifier: "SelectPreferenceTableViewCell")
+         profilePreferencesTableView.register(UINib(nibName: "DurationTableViewCell", bundle: nil), forCellReuseIdentifier: "DurationTableViewCell")
+         profilePreferencesTableView.register(UINib(nibName: "PopularityTableViewCell", bundle: nil), forCellReuseIdentifier: "PopularityTableViewCell")
+    }
 
 
     @IBAction func movieButtonPressed(_ sender: Any) {
@@ -91,29 +95,35 @@ extension ProfileViewController : UITableViewDelegate{
         self.profilePreferencesTableView.deselectRow(at: indexPath, animated: true)
         let profilePreference : ProfilePreference = self.preferenceToSelect.preferences[indexPath.row]
         switch profilePreference.preferenceType {
-        case .selectGenre:
-            let selectGenreViewController: SelectGenreViewController =
-                SelectGenreViewController(nibName:"SelectGenreViewController",bundle: nil)
-            selectGenreViewController.movieGenres = self.userMoviePreferences.movieGenres
-            selectGenreViewController.delegate = self
-            self.navigationController?.pushViewController(selectGenreViewController, animated: true)
-            break
-        case .selectFromDate:
-            let selectDateViewController: SelectDateViewController =
-                SelectDateViewController(nibName:"SelectDateViewController",bundle: nil)
-            selectDateViewController.releaseDateType = .from
-            selectDateViewController.pickedDate = userMoviePreferences.fromReleaseDate
-            selectDateViewController.delegate = self
-            self.navigationController?.pushViewController(selectDateViewController, animated: true)
-            break
-        case .selectUntilDate:
-            let selectDateViewController: SelectDateViewController =
-                SelectDateViewController(nibName:"SelectDateViewController",bundle: nil)
-            selectDateViewController.releaseDateType = .until
-            selectDateViewController.pickedDate = userMoviePreferences.untilReleaseDate
-            selectDateViewController.delegate = self
-            self.navigationController?.pushViewController(selectDateViewController, animated: true)
-            break
+            case .selectGenre:
+                let selectGenreViewController: SelectGenreViewController =
+                    SelectGenreViewController(nibName:"SelectGenreViewController",bundle: nil)
+                selectGenreViewController.movieGenres = self.userMoviePreferences.movieGenres
+                selectGenreViewController.delegate = self
+                self.navigationController?.pushViewController(selectGenreViewController, animated: true)
+                break
+            case .selectFromDate:
+                let selectDateViewController: SelectDateViewController =
+                    SelectDateViewController(nibName:"SelectDateViewController",bundle: nil)
+                selectDateViewController.releaseDateType = .from
+                selectDateViewController.pickedDate = userMoviePreferences.fromReleaseDate
+                selectDateViewController.delegate = self
+                self.navigationController?.pushViewController(selectDateViewController, animated: true)
+                break
+            case .selectUntilDate:
+                let selectDateViewController: SelectDateViewController =
+                    SelectDateViewController(nibName:"SelectDateViewController",bundle: nil)
+                selectDateViewController.releaseDateType = .until
+                selectDateViewController.pickedDate = userMoviePreferences.untilReleaseDate
+                selectDateViewController.delegate = self
+                self.navigationController?.pushViewController(selectDateViewController, animated: true)
+                break
+            case .selecDuration:
+                //TODO
+                break
+            case .selectPopularity:
+                //TODO
+                break
         }
 
     }
@@ -130,13 +140,57 @@ extension ProfileViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let profilePreference : ProfilePreference = self.preferenceToSelect.preferences[indexPath.row]
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "SelectPreferenceTableViewCell") as? SelectPreferenceTableViewCell {
-            cell.preferenceTitleLabel.text = profilePreference.title
-            return cell
-        }
-
-        return UITableViewCell()
+        switch profilePreference.preferenceType {
+            case .selectGenre:
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "SelectPreferenceTableViewCell") as? SelectPreferenceTableViewCell {
+                        let selectedGenres = userMoviePreferences.movieGenres.genres.filter { $0.isSelected == true }
+                        if selectedGenres.count > 0 {
+                            cell.preferenceTitleLabel.text = "Géneros seleccionados: " + MovieGenreAdapter.getSelectedGenresTitle(selectedGenres: selectedGenres)
+                        }else{
+                            cell.preferenceTitleLabel.text = profilePreference.title
+                        }
+                        return cell
+                    }
+                return UITableViewCell()
+            case .selectFromDate:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "SelectPreferenceTableViewCell") as? SelectPreferenceTableViewCell {
+                    if let fromDate = self.userMoviePreferences.fromReleaseDate {
+                        cell.preferenceTitleLabel.text = "Fecha desde: " + fromDate
+                    }else{
+                        cell.preferenceTitleLabel.text = profilePreference.title
+                    }
+                    return cell
+                }
+                return UITableViewCell()
+            case .selectUntilDate:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "SelectPreferenceTableViewCell") as? SelectPreferenceTableViewCell {
+                   if let untilDate = self.userMoviePreferences.untilReleaseDate {
+                       cell.preferenceTitleLabel.text = "Fecha hasta: " + untilDate
+                   }else{
+                       cell.preferenceTitleLabel.text = profilePreference.title
+                   }
+                   return cell
+               }
+               return UITableViewCell()
+            case .selectPopularity:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "PopularityTableViewCell") as? PopularityTableViewCell {
+                    cell.delegate = self
+                    cell.popularitySwitch.isOn = self.userMoviePreferences.mostPopular
+                    return cell
+                }
+                return UITableViewCell()
+            case .selecDuration:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "DurationTableViewCell") as? DurationTableViewCell{
+                    cell.durationTextField.text = self.userMoviePreferences.runtime
+                    cell.delegate = self
+                    return cell
+                }
+                return UITableViewCell()
+            }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 }
@@ -144,20 +198,37 @@ extension ProfileViewController : UITableViewDataSource{
 extension ProfileViewController : SelectGenreProtocol{
     func movieGenresDidChange(movieGenres: MovieGenres) {
         self.userMoviePreferences.movieGenres = movieGenres
+        self.profilePreferencesTableView.reloadData()
+
     }
 }
 
 extension ProfileViewController : SelectDateDelegate{
     func datePicked(date: String, type: ReleaseDateType) {
         switch type {
-        case .from:
-            self.userMoviePreferences.fromReleaseDate = date
-            break
-        case .until:
-            self.userMoviePreferences.untilReleaseDate = date
-            break
+            case .from:
+                self.userMoviePreferences.fromReleaseDate = date
+                break
+            case .until:
+                self.userMoviePreferences.untilReleaseDate = date
+                break
+        }
+        self.profilePreferencesTableView.reloadData()
     }
+    
 }
     
+    
+extension ProfileViewController : DurationSelectedDelegate{
+    func durationSelected(duration: String){
+        self.userMoviePreferences.runtime = duration
+    }
+}
+
+extension ProfileViewController :PoplarityDelegate {
+    func popularitySelected(popularity: Bool){
+        self.userMoviePreferences.mostPopular = popularity
+        self.profilePreferencesTableView.reloadData()
+    }
     
 }

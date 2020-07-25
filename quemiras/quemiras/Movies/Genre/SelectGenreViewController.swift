@@ -15,6 +15,7 @@ public protocol SelectGenreProtocol {
 class SelectGenreViewController: LoadingViewController {
 
     @IBOutlet weak var genreTableView: UITableView!
+    
     var movieGenres : MovieGenres = MovieGenres(genres: [])
     var delegate : SelectGenreProtocol?
     

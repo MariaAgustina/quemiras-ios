@@ -16,4 +16,12 @@ class MovieGenreAdapter {
         }
         return genresString
     }
+    
+    static func getSelectedGenresTitle(selectedGenres: Array<MovieGenre>) -> String{
+        var genresString : String = ""
+        for selectedGenre in selectedGenres{
+            genresString = genresString + selectedGenre.name + "  "
+        }
+        return genresString
+    }
 }

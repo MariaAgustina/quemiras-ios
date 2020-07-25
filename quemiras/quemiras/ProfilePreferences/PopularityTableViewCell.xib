@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="PopularityTableViewCell" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PopularityTableViewCell" customModule="quemiras" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Más Populares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giG-Gq-gIk">
+                        <rect key="frame" x="20" y="30" width="112.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7RE-DQ-f0q">
+                        <rect key="frame" x="251" y="24.5" width="51" height="31"/>
+                        <connections>
+                            <action selector="popularitySwitchTapped:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Zqf-r2-JHz"/>
+                        </connections>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="giG-Gq-gIk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="6Xj-Du-77f"/>
+                    <constraint firstItem="giG-Gq-gIk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TAH-Bx-FVJ"/>
+                    <constraint firstItem="7RE-DQ-f0q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eNC-Ld-VgF"/>
+                    <constraint firstAttribute="trailing" secondItem="7RE-DQ-f0q" secondAttribute="trailing" constant="20" id="ygy-hm-ie7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="popularitySwitch" destination="7RE-DQ-f0q" id="rcv-Ct-qCA"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="85"/>
+        </tableViewCell>
+    </objects>
+</document>

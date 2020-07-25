@@ -40,6 +40,12 @@
 		FB4F10DE24C8EE3B003625B4 /* MovieGenresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10DD24C8EE3B003625B4 /* MovieGenresService.swift */; };
 		FB503B3424CBAC4800225C40 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B3224CBAC4800225C40 /* SelectDateViewController.swift */; };
 		FB503B3524CBAC4800225C40 /* SelectDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB503B3324CBAC4800225C40 /* SelectDateViewController.xib */; };
+		FB503B3B24CC822600225C40 /* PopularityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B3924CC822600225C40 /* PopularityTableViewCell.swift */; };
+		FB503B3C24CC822600225C40 /* PopularityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB503B3A24CC822600225C40 /* PopularityTableViewCell.xib */; };
+		FB503B4124CC824300225C40 /* DurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B3F24CC824300225C40 /* DurationTableViewCell.swift */; };
+		FB503B4224CC824300225C40 /* DurationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB503B4024CC824300225C40 /* DurationTableViewCell.xib */; };
+		FB503B4424CC861B00225C40 /* DurationProfilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4324CC861B00225C40 /* DurationProfilePreference.swift */; };
+		FB503B4624CC865300225C40 /* PopularityProfilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4524CC865300225C40 /* PopularityProfilePreference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +111,12 @@
 		FB4F10DD24C8EE3B003625B4 /* MovieGenresService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenresService.swift; sourceTree = "<group>"; };
 		FB503B3224CBAC4800225C40 /* SelectDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
 		FB503B3324CBAC4800225C40 /* SelectDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectDateViewController.xib; sourceTree = "<group>"; };
+		FB503B3924CC822600225C40 /* PopularityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityTableViewCell.swift; sourceTree = "<group>"; };
+		FB503B3A24CC822600225C40 /* PopularityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularityTableViewCell.xib; sourceTree = "<group>"; };
+		FB503B3F24CC824300225C40 /* DurationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTableViewCell.swift; sourceTree = "<group>"; };
+		FB503B4024CC824300225C40 /* DurationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DurationTableViewCell.xib; sourceTree = "<group>"; };
+		FB503B4324CC861B00225C40 /* DurationProfilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationProfilePreference.swift; sourceTree = "<group>"; };
+		FB503B4524CC865300225C40 /* PopularityProfilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityProfilePreference.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,8 +234,14 @@
 			isa = PBXGroup;
 			children = (
 				FB48540324C9032800C3F5E2 /* SelectPreferenceTableViewCell.swift */,
+				FB503B3924CC822600225C40 /* PopularityTableViewCell.swift */,
+				FB503B3A24CC822600225C40 /* PopularityTableViewCell.xib */,
 				FB48540724C9078300C3F5E2 /* PreferenceToSelect.swift */,
+				FB503B3F24CC824300225C40 /* DurationTableViewCell.swift */,
+				FB503B4024CC824300225C40 /* DurationTableViewCell.xib */,
 				FB48540924C9079800C3F5E2 /* ProfilePreference.swift */,
+				FB503B4524CC865300225C40 /* PopularityProfilePreference.swift */,
+				FB503B4324CC861B00225C40 /* DurationProfilePreference.swift */,
 				FB48540424C9032800C3F5E2 /* SelectPreferenceTableViewCell.xib */,
 			);
 			path = ProfilePreferences;
@@ -385,11 +403,13 @@
 			files = (
 				FB48541424C91ED900C3F5E2 /* MovieGenreTableViewCell.xib in Resources */,
 				FB44F6162482E6D200C0D1E3 /* LaunchScreen.storyboard in Resources */,
+				FB503B3C24CC822600225C40 /* PopularityTableViewCell.xib in Resources */,
 				FB44F6132482E6D200C0D1E3 /* Assets.xcassets in Resources */,
 				FB48540E24C9189D00C3F5E2 /* SelectGenreViewController.xib in Resources */,
 				FB48540624C9032800C3F5E2 /* SelectPreferenceTableViewCell.xib in Resources */,
 				FB503B3524CBAC4800225C40 /* SelectDateViewController.xib in Resources */,
 				FB44F6112482E6CE00C0D1E3 /* Main.storyboard in Resources */,
+				FB503B4224CC824300225C40 /* DurationTableViewCell.xib in Resources */,
 				FB4F10C924C7756E003625B4 /* ProfileViewController.xib in Resources */,
 				FB4F10D424C7B007003625B4 /* RecommendedMovieViewController.xib in Resources */,
 			);
@@ -531,9 +551,13 @@
 				FB4F10D924C8EB9D003625B4 /* UserMoviePreferences.swift in Sources */,
 				FB44F60E2482E6CE00C0D1E3 /* LoginViewController.swift in Sources */,
 				FB48541324C91ED900C3F5E2 /* MovieGenreTableViewCell.swift in Sources */,
+				FB503B3B24CC822600225C40 /* PopularityTableViewCell.swift in Sources */,
 				FB4F10CE24C796A8003625B4 /* Movie.swift in Sources */,
+				FB503B4624CC865300225C40 /* PopularityProfilePreference.swift in Sources */,
 				FB48540D24C9189D00C3F5E2 /* SelectGenreViewController.swift in Sources */,
 				FB44F60A2482E6CE00C0D1E3 /* AppDelegate.swift in Sources */,
+				FB503B4424CC861B00225C40 /* DurationProfilePreference.swift in Sources */,
+				FB503B4124CC824300225C40 /* DurationTableViewCell.swift in Sources */,
 				FB48540124C8F55300C3F5E2 /* MovieGenreAdapter.swift in Sources */,
 				FB44F60C2482E6CE00C0D1E3 /* SceneDelegate.swift in Sources */,
 				FB4F10C824C7756E003625B4 /* ProfileViewController.swift in Sources */,

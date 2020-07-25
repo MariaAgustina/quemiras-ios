@@ -12,7 +12,8 @@ enum PreferenceType {
     case selectGenre
     case selectFromDate
     case selectUntilDate
-
+    case selecDuration
+    case selectPopularity
 }
 
 class PreferenceToSelect {
@@ -23,6 +24,8 @@ class PreferenceToSelect {
         loadSelectGenrePreference()
         loadDateFromPrefrence()
         loadDateUntilPrefrence()
+        loadDurationPreference()
+        loadPopularityPrefenrence()
     }
     
     func loadSelectGenrePreference(){
@@ -49,5 +52,23 @@ class PreferenceToSelect {
         self.preferences.append(preference)
 
     }
+
+    func loadDurationPreference(){
+        let preference = DurationProfilePreference()
+        preference.title = "Duración: "
+        preference.preferenceType = .selecDuration
+        preference.selectedDuration = "90"
+        self.preferences.append(preference)
+    }
+    
+    func loadPopularityPrefenrence(){
+        let preference = PopularityProfilePreference()
+        preference.title = "Más populares"
+        preference.preferenceType = .selectPopularity
+        preference.isSelected = true
+        self.preferences.append(preference)
+    }
+    
+
     
 }

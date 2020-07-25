@@ -41,6 +41,10 @@ class MovieDiscoverService: NSObject {
             params["primary_release_date.lte"] = userPreferences.untilReleaseDate
         }
         
+        params["sort_by"] = (userPreferences.mostPopular) ? "popularity.desc" : "popularity.asc"
+        params["with_runtime.gte"] = userPreferences.runtime // + heuristic suma tiempo
+        params["with_runtime.lte"] = userPreferences.runtime // + heuristic suma tiempo
+
         let headers = ["Authorization":apikey,
                        "Content-Type":"application/json;charset=utf-8"]
         
