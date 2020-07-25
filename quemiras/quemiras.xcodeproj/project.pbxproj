@@ -46,6 +46,7 @@
 		FB503B4224CC824300225C40 /* DurationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB503B4024CC824300225C40 /* DurationTableViewCell.xib */; };
 		FB503B4424CC861B00225C40 /* DurationProfilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4324CC861B00225C40 /* DurationProfilePreference.swift */; };
 		FB503B4624CC865300225C40 /* PopularityProfilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4524CC865300225C40 /* PopularityProfilePreference.swift */; };
+		FB503B4824CCBF5A00225C40 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4724CCBF5A00225C40 /* MovieDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		FB503B4024CC824300225C40 /* DurationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DurationTableViewCell.xib; sourceTree = "<group>"; };
 		FB503B4324CC861B00225C40 /* DurationProfilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationProfilePreference.swift; sourceTree = "<group>"; };
 		FB503B4524CC865300225C40 /* PopularityProfilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityProfilePreference.swift; sourceTree = "<group>"; };
+		FB503B4724CCBF5A00225C40 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 				FB4F10DA24C8EDEE003625B4 /* Genre */,
 				FB4F10CB24C795F5003625B4 /* MoviesArray.swift */,
 				FB4F10CD24C796A8003625B4 /* Movie.swift */,
+				FB503B4724CCBF5A00225C40 /* MovieDetail.swift */,
 				FB4F10CF24C79E83003625B4 /* MovieDiscoverService.swift */,
 				FB4F10D124C7B007003625B4 /* RecommendedMovieViewController.swift */,
 				FB4F10D224C7B007003625B4 /* RecommendedMovieViewController.xib */,
@@ -554,6 +557,7 @@
 				FB503B3B24CC822600225C40 /* PopularityTableViewCell.swift in Sources */,
 				FB4F10CE24C796A8003625B4 /* Movie.swift in Sources */,
 				FB503B4624CC865300225C40 /* PopularityProfilePreference.swift in Sources */,
+				FB503B4824CCBF5A00225C40 /* MovieDetail.swift in Sources */,
 				FB48540D24C9189D00C3F5E2 /* SelectGenreViewController.swift in Sources */,
 				FB44F60A2482E6CE00C0D1E3 /* AppDelegate.swift in Sources */,
 				FB503B4424CC861B00225C40 /* DurationProfilePreference.swift in Sources */,

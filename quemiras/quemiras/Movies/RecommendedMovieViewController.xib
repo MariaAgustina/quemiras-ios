@@ -9,61 +9,113 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecommendedMovieViewController" customModule="quemiras" customModuleProvider="target">
             <connections>
+                <outlet property="dateLabel" destination="IXJ-5M-ykj" id="b8Q-Gc-IqC"/>
                 <outlet property="descriptionLabel" destination="D5L-Fx-XCi" id="rYW-pq-nJr"/>
+                <outlet property="durationLabel" destination="MWi-ew-EaP" id="BhA-Y9-sTy"/>
+                <outlet property="genresLabel" destination="K8C-Qq-ssx" id="xWk-ad-yTT"/>
                 <outlet property="movieImageView" destination="s6M-C7-M82" id="Gu6-jN-pbo"/>
+                <outlet property="popularityLabel" destination="oI8-E4-A7j" id="pr0-FM-lgo"/>
                 <outlet property="titleLabel" destination="YP4-DZ-8CV" id="373-qZ-Fcv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué miras?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuK-nb-Wuw">
-                    <rect key="frame" x="89" y="75" width="236" height="35.5"/>
-                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="35"/>
-                    <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La naranja mecanica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-DZ-8CV">
-                    <rect key="frame" x="96" y="606" width="222.5" height="30"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcJ-60-ybU">
+                    <rect key="frame" x="0.0" y="44" width="414" height="1122"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué miras?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuK-nb-Wuw">
+                            <rect key="frame" x="89" y="20" width="236" height="35.5"/>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="35"/>
+                            <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La naranja mecanica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-DZ-8CV">
+                            <rect key="frame" x="96" y="550.5" width="222.5" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="u6w-iN-1Lk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-C7-M82">
+                            <rect key="frame" x="57" y="80.5" width="300" height="450"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="s6M-C7-M82" secondAttribute="height" multiplier="2:3" id="c96-36-qv4"/>
+                                <constraint firstAttribute="width" constant="300" id="iic-JY-fGm"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5L-Fx-XCi">
+                            <rect key="frame" x="20" y="600.5" width="374" height="135"/>
+                            <string key="text">Descripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etc</string>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXJ-5M-ykj">
+                            <rect key="frame" x="60" y="873.5" width="53.5" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duración" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWi-ew-EaP">
+                            <rect key="frame" x="60" y="785.5" width="78.5" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularidad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oI8-E4-A7j">
+                            <rect key="frame" x="60" y="917.5" width="104" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Géneros" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8C-Qq-ssx">
+                            <rect key="frame" x="60" y="829.5" width="294" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="u6w-iN-1Lk"/>
+                        <constraint firstItem="oI8-E4-A7j" firstAttribute="leading" secondItem="IXJ-5M-ykj" secondAttribute="leading" id="2Nh-gA-mj9"/>
+                        <constraint firstItem="MWi-ew-EaP" firstAttribute="top" secondItem="D5L-Fx-XCi" secondAttribute="bottom" constant="50" id="3Ce-kf-nI0"/>
+                        <constraint firstItem="K8C-Qq-ssx" firstAttribute="leading" secondItem="MWi-ew-EaP" secondAttribute="leading" id="5nD-qc-xrh"/>
+                        <constraint firstItem="s6M-C7-M82" firstAttribute="centerX" secondItem="XcJ-60-ybU" secondAttribute="centerX" id="9QG-sb-jnb"/>
+                        <constraint firstItem="YP4-DZ-8CV" firstAttribute="centerX" secondItem="XcJ-60-ybU" secondAttribute="centerX" id="Br7-xs-x51"/>
+                        <constraint firstItem="D5L-Fx-XCi" firstAttribute="centerX" secondItem="XcJ-60-ybU" secondAttribute="centerX" id="CnH-sm-0bs"/>
+                        <constraint firstItem="s6M-C7-M82" firstAttribute="top" secondItem="ZuK-nb-Wuw" secondAttribute="bottom" constant="25" id="Fe6-uS-jiT"/>
+                        <constraint firstItem="IXJ-5M-ykj" firstAttribute="leading" secondItem="K8C-Qq-ssx" secondAttribute="leading" id="GVd-af-TbC"/>
+                        <constraint firstItem="MWi-ew-EaP" firstAttribute="leading" secondItem="CP9-ih-JbF" secondAttribute="leading" constant="60" id="HMc-pC-SJk"/>
+                        <constraint firstItem="oI8-E4-A7j" firstAttribute="top" secondItem="IXJ-5M-ykj" secondAttribute="bottom" constant="20" id="JhC-WG-5kH"/>
+                        <constraint firstItem="YP4-DZ-8CV" firstAttribute="centerX" secondItem="XcJ-60-ybU" secondAttribute="centerX" id="Ncg-AX-AZa"/>
+                        <constraint firstAttribute="trailing" secondItem="D5L-Fx-XCi" secondAttribute="trailing" constant="20" id="VS2-hh-V5W"/>
+                        <constraint firstItem="YP4-DZ-8CV" firstAttribute="top" secondItem="s6M-C7-M82" secondAttribute="bottom" constant="20" id="Wd3-BM-fMf"/>
+                        <constraint firstItem="CP9-ih-JbF" firstAttribute="trailing" secondItem="K8C-Qq-ssx" secondAttribute="trailing" constant="60" id="Y9n-7c-89y"/>
+                        <constraint firstItem="D5L-Fx-XCi" firstAttribute="top" secondItem="YP4-DZ-8CV" secondAttribute="bottom" constant="20" id="Z9Y-OY-dMp"/>
+                        <constraint firstItem="D5L-Fx-XCi" firstAttribute="leading" secondItem="XcJ-60-ybU" secondAttribute="leading" constant="20" id="bPe-7K-Fnr"/>
+                        <constraint firstItem="K8C-Qq-ssx" firstAttribute="top" secondItem="MWi-ew-EaP" secondAttribute="bottom" constant="20" id="ggZ-XZ-C1R"/>
+                        <constraint firstAttribute="bottom" secondItem="oI8-E4-A7j" secondAttribute="bottom" constant="169.5" id="nuZ-Fd-ugH"/>
+                        <constraint firstItem="ZuK-nb-Wuw" firstAttribute="top" secondItem="CP9-ih-JbF" secondAttribute="top" constant="20" id="tNN-vf-nT7"/>
+                        <constraint firstItem="IXJ-5M-ykj" firstAttribute="top" secondItem="K8C-Qq-ssx" secondAttribute="bottom" constant="20" id="wtE-0G-bQr"/>
+                        <constraint firstItem="ZuK-nb-Wuw" firstAttribute="centerX" secondItem="XcJ-60-ybU" secondAttribute="centerX" id="xJ0-pJ-0hO"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
-                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-C7-M82">
-                    <rect key="frame" x="57" y="136" width="300" height="450"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="s6M-C7-M82" secondAttribute="height" multiplier="2:3" id="c96-36-qv4"/>
-                        <constraint firstAttribute="width" constant="300" id="iic-JY-fGm"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5L-Fx-XCi">
-                    <rect key="frame" x="20" y="656" width="374" height="135"/>
-                    <string key="text">Descripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etc</string>
-                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
-                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <viewLayoutGuide key="contentLayoutGuide" id="CP9-ih-JbF"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="ucb-gb-YYb"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="ZuK-nb-Wuw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AkP-aG-UZG"/>
-                <constraint firstItem="YP4-DZ-8CV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Bcw-2j-NMx"/>
-                <constraint firstItem="YP4-DZ-8CV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="EMF-rm-6rT"/>
-                <constraint firstItem="s6M-C7-M82" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ty1-MZ-hTp"/>
-                <constraint firstItem="YP4-DZ-8CV" firstAttribute="top" secondItem="s6M-C7-M82" secondAttribute="bottom" constant="20" id="Wx6-sg-6t3"/>
-                <constraint firstItem="ZuK-nb-Wuw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="31" id="cAf-HB-sm9"/>
-                <constraint firstItem="D5L-Fx-XCi" firstAttribute="top" secondItem="YP4-DZ-8CV" secondAttribute="bottom" constant="20" id="dsc-6G-srZ"/>
-                <constraint firstItem="D5L-Fx-XCi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="oYm-Wp-V6l"/>
-                <constraint firstItem="D5L-Fx-XCi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ooC-om-wxz"/>
-                <constraint firstItem="s6M-C7-M82" firstAttribute="top" secondItem="ZuK-nb-Wuw" secondAttribute="bottom" constant="25.5" id="t7w-Bx-En9"/>
-                <constraint firstAttribute="trailing" secondItem="D5L-Fx-XCi" secondAttribute="trailing" constant="20" id="zuM-WB-JmP"/>
+                <constraint firstItem="XcJ-60-ybU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0UT-vE-rZD"/>
+                <constraint firstItem="XcJ-60-ybU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Cub-c8-UTt"/>
+                <constraint firstItem="XcJ-60-ybU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VzN-Bz-x2I"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XcJ-60-ybU" secondAttribute="bottom" id="gF1-sO-eYl"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
         </view>

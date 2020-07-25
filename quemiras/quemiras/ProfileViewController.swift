@@ -69,19 +69,14 @@ extension ProfileViewController : LoginButtonDelegate {
 }
 
 extension ProfileViewController : MovieDiscoverProtocol{
-    func movieDiscoverSucceded(moviesArray: MoviesArray){
+    func movieDiscoverSucceded(movie: Movie){
         self.hideActivityIndicartor()
         let recommendedMovieViewController: RecommendedMovieViewController =
             RecommendedMovieViewController(nibName:"RecommendedMovieViewController",bundle: nil)
         
-        if(moviesArray.results.count > 0){
-            //TODO: heuristica
-            recommendedMovieViewController.movie = moviesArray.results[0]
-            self.navigationController?.pushViewController(recommendedMovieViewController, animated: true)
-        }else{
-            //TODO: mostrar que no hay pelis
-            print("No hay pelis")
-        }
+        
+        recommendedMovieViewController.movie = movie
+        self.navigationController?.pushViewController(recommendedMovieViewController, animated: true)
     }
     
     func movieDiscoverFailed(error: Error){

@@ -24,4 +24,7 @@ public struct Movie: Codable {
     let video : Bool
     let vote_average : Float
     
+    //movieDetails
+    var runtime : Int?
+    var genres: Array<MovieGenre>?
 }

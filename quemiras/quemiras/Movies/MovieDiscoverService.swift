@@ -10,7 +10,7 @@ import UIKit
 import AFNetworking
 
 public protocol MovieDiscoverProtocol {
-    func movieDiscoverSucceded(moviesArray: MoviesArray)
+    func movieDiscoverSucceded(movie: Movie)
     func movieDiscoverFailed(error: Error)
     
 }
@@ -54,7 +54,51 @@ class MovieDiscoverService: NSObject {
                 let dataJson = try JSONSerialization.data(withJSONObject: responseObject, options: JSONSerialization.WritingOptions.prettyPrinted)
                 let moviesArray = try JSONDecoder().decode(MoviesArray.self, from: dataJson)
                 print(moviesArray)
-                self.delegate?.movieDiscoverSucceded(moviesArray: moviesArray)
+                
+                //TODO: do heuristic
+                if(moviesArray.results.count > 0){
+                    let movie: Movie = moviesArray.results[0]
+                
+                    //to complete object with it Movie details
+                    self.getMovie(movie: movie)
+                }else{
+                    //TODO: mostrar que no se encontro una peli
+                    //self.delegate not founndddd
+                }
+                
+            }
+            catch {
+                print("Error decoding movie: " + error.localizedDescription)
+                self.delegate?.movieDiscoverFailed(error: error)
+            }
+           
+        }) { (task: URLSessionDataTask?, error: Error) in
+            print("error" + error.localizedDescription)
+            self.delegate?.movieDiscoverFailed(error: error)
+
+        }
+    }
+    
+    func getMovie(movie: Movie) {
+        let manager = AFHTTPSessionManager(baseURL: URL(string: "https://api.themoviedb.org")!)
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        
+        let params = [
+            "language": "es",
+            ]
+
+        let headers = ["Authorization":apikey,
+                       "Content-Type":"application/json;charset=utf-8"]
+        
+        manager.get("/3/movie/\(movie.id)", parameters: params, headers: headers, progress: nil, success: { (task: URLSessionDataTask, responseObject: Any) in
+            do {
+                let dataJson = try JSONSerialization.data(withJSONObject: responseObject, options: JSONSerialization.WritingOptions.prettyPrinted)
+                let movieDetails = try JSONDecoder().decode(MovieDetail.self, from: dataJson)
+                var movieWithDetails: Movie = movie
+                movieWithDetails.runtime = movieDetails.runtime
+                movieWithDetails.genres = movieDetails.genres
+                self.delegate?.movieDiscoverSucceded(movie: movieWithDetails)
             }
             catch {
                 print("Error decoding movie: " + error.localizedDescription)

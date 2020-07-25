@@ -14,14 +14,23 @@ class RecommendedMovieViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
     
-    public var movie : Movie?
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var popularityLabel: UILabel!
+    @IBOutlet weak var genresLabel: UILabel!
     
+    public var movie : Movie?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "¿Qué miras?"
         
         self.titleLabel.text = self.movie?.title ?? ""
         self.descriptionLabel.text = self.movie?.overview ?? ""
+        self.durationLabel.text = "Duración: " + "\(self.movie!.runtime!)"
+        self.dateLabel.text = "Fecha estreno: " + (self.movie?.release_date ?? "")
+        self.popularityLabel.text = "Popularidad: " +  String(describing: self.movie!.popularity)
+        self.genresLabel.text = "Géneros: " + MovieGenreAdapter.getSelectedGenresTitle(selectedGenres: movie!.genres!)
         getMovieImage()
         
     }
