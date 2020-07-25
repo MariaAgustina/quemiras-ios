@@ -12,6 +12,7 @@ enum PreferenceType {
     case selectGenre
     case selectFromDate
     case selectUntilDate
+
 }
 
 class PreferenceToSelect {
@@ -20,14 +21,33 @@ class PreferenceToSelect {
     init(){
         self.preferences = []
         loadSelectGenrePreference()
+        loadDateFromPrefrence()
+        loadDateUntilPrefrence()
     }
     
     func loadSelectGenrePreference(){
         
-        let genrePreference = ProfilePreference()
-        genrePreference.title = "Seleccionar género/s"
-        genrePreference.preferenceType = .selectGenre
+        let preference = ProfilePreference()
+        preference.title = "Seleccionar género/s"
+        preference.preferenceType = .selectGenre
         
-        self.preferences.append(genrePreference)
+        self.preferences.append(preference)
     }
+    
+    func loadDateFromPrefrence(){
+        let preference = ProfilePreference()
+        preference.title = "Seleccionar fecha desde"
+        preference.preferenceType = .selectFromDate
+        self.preferences.append(preference)
+
+    }
+    
+    func loadDateUntilPrefrence(){
+        let preference = ProfilePreference()
+        preference.title = "Seleccionar fecha hasta"
+        preference.preferenceType = .selectUntilDate
+        self.preferences.append(preference)
+
+    }
+    
 }

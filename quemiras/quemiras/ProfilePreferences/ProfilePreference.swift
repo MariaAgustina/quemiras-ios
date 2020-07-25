@@ -10,11 +10,7 @@ import UIKit
 
 public class ProfilePreference {
     
-    var title : String?
-    var preferenceType : PreferenceType
-    
-    init() {
-        self.title = ""
-        self.preferenceType = .selectGenre
-    }
+    var title : String = ""
+    var preferenceType : PreferenceType  = .selectGenre
+
 }

@@ -70,9 +70,14 @@ extension ProfileViewController : MovieDiscoverProtocol{
         let recommendedMovieViewController: RecommendedMovieViewController =
             RecommendedMovieViewController(nibName:"RecommendedMovieViewController",bundle: nil)
         
-        //TODO: heuristica
-        recommendedMovieViewController.movie = moviesArray.results[0]
-        self.navigationController?.pushViewController(recommendedMovieViewController, animated: true)
+        if(moviesArray.results.count > 0){
+            //TODO: heuristica
+            recommendedMovieViewController.movie = moviesArray.results[0]
+            self.navigationController?.pushViewController(recommendedMovieViewController, animated: true)
+        }else{
+            //TODO: mostrar que no hay pelis
+            print("No hay pelis")
+        }
     }
     
     func movieDiscoverFailed(error: Error){
@@ -92,8 +97,23 @@ extension ProfileViewController : UITableViewDelegate{
             selectGenreViewController.movieGenres = self.userMoviePreferences.movieGenres
             selectGenreViewController.delegate = self
             self.navigationController?.pushViewController(selectGenreViewController, animated: true)
-        default:
-            print("do nothing")
+            break
+        case .selectFromDate:
+            let selectDateViewController: SelectDateViewController =
+                SelectDateViewController(nibName:"SelectDateViewController",bundle: nil)
+            selectDateViewController.releaseDateType = .from
+            selectDateViewController.pickedDate = userMoviePreferences.fromReleaseDate
+            selectDateViewController.delegate = self
+            self.navigationController?.pushViewController(selectDateViewController, animated: true)
+            break
+        case .selectUntilDate:
+            let selectDateViewController: SelectDateViewController =
+                SelectDateViewController(nibName:"SelectDateViewController",bundle: nil)
+            selectDateViewController.releaseDateType = .until
+            selectDateViewController.pickedDate = userMoviePreferences.untilReleaseDate
+            selectDateViewController.delegate = self
+            self.navigationController?.pushViewController(selectDateViewController, animated: true)
+            break
         }
 
     }
@@ -125,6 +145,19 @@ extension ProfileViewController : SelectGenreProtocol{
     func movieGenresDidChange(movieGenres: MovieGenres) {
         self.userMoviePreferences.movieGenres = movieGenres
     }
+}
+
+extension ProfileViewController : SelectDateDelegate{
+    func datePicked(date: String, type: ReleaseDateType) {
+        switch type {
+        case .from:
+            self.userMoviePreferences.fromReleaseDate = date
+            break
+        case .until:
+            self.userMoviePreferences.untilReleaseDate = date
+            break
+    }
+}
     
     
 }

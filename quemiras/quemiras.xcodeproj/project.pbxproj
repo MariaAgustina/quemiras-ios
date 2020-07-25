@@ -38,6 +38,8 @@
 		FB4F10D924C8EB9D003625B4 /* UserMoviePreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10D824C8EB9D003625B4 /* UserMoviePreferences.swift */; };
 		FB4F10DC24C8EE00003625B4 /* MovieGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10DB24C8EE00003625B4 /* MovieGenre.swift */; };
 		FB4F10DE24C8EE3B003625B4 /* MovieGenresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F10DD24C8EE3B003625B4 /* MovieGenresService.swift */; };
+		FB503B3424CBAC4800225C40 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B3224CBAC4800225C40 /* SelectDateViewController.swift */; };
+		FB503B3524CBAC4800225C40 /* SelectDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB503B3324CBAC4800225C40 /* SelectDateViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		FB4F10D824C8EB9D003625B4 /* UserMoviePreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMoviePreferences.swift; sourceTree = "<group>"; };
 		FB4F10DB24C8EE00003625B4 /* MovieGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenre.swift; sourceTree = "<group>"; };
 		FB4F10DD24C8EE3B003625B4 /* MovieGenresService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenresService.swift; sourceTree = "<group>"; };
+		FB503B3224CBAC4800225C40 /* SelectDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
+		FB503B3324CBAC4800225C40 /* SelectDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectDateViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +232,7 @@
 		FB4F10CA24C795C3003625B4 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				FB503B3124CBAC2700225C40 /* SelectDate */,
 				FB4F10DA24C8EDEE003625B4 /* Genre */,
 				FB4F10CB24C795F5003625B4 /* MoviesArray.swift */,
 				FB4F10CD24C796A8003625B4 /* Movie.swift */,
@@ -258,6 +263,15 @@
 				FB4F10DD24C8EE3B003625B4 /* MovieGenresService.swift */,
 			);
 			path = Genre;
+			sourceTree = "<group>";
+		};
+		FB503B3124CBAC2700225C40 /* SelectDate */ = {
+			isa = PBXGroup;
+			children = (
+				FB503B3224CBAC4800225C40 /* SelectDateViewController.swift */,
+				FB503B3324CBAC4800225C40 /* SelectDateViewController.xib */,
+			);
+			path = SelectDate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +388,7 @@
 				FB44F6132482E6D200C0D1E3 /* Assets.xcassets in Resources */,
 				FB48540E24C9189D00C3F5E2 /* SelectGenreViewController.xib in Resources */,
 				FB48540624C9032800C3F5E2 /* SelectPreferenceTableViewCell.xib in Resources */,
+				FB503B3524CBAC4800225C40 /* SelectDateViewController.xib in Resources */,
 				FB44F6112482E6CE00C0D1E3 /* Main.storyboard in Resources */,
 				FB4F10C924C7756E003625B4 /* ProfileViewController.xib in Resources */,
 				FB4F10D424C7B007003625B4 /* RecommendedMovieViewController.xib in Resources */,
@@ -509,6 +524,7 @@
 				FB48540A24C9079800C3F5E2 /* ProfilePreference.swift in Sources */,
 				FB4F10D324C7B007003625B4 /* RecommendedMovieViewController.swift in Sources */,
 				FB48541024C91A7400C3F5E2 /* UIViewController+Loading.swift in Sources */,
+				FB503B3424CBAC4800225C40 /* SelectDateViewController.swift in Sources */,
 				FB48540824C9078300C3F5E2 /* PreferenceToSelect.swift in Sources */,
 				FB4F10DC24C8EE00003625B4 /* MovieGenre.swift in Sources */,
 				FB4F10CC24C795F5003625B4 /* MoviesArray.swift in Sources */,

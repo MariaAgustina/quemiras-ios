@@ -12,12 +12,14 @@ class UserMoviePreferences {
     
     //HECHAS
     //1 with_genres
+    //release_date.lte 2
+    //release_date.gte 3
+    // mas votada 4
+    //duracion 5
     
     //TODO
     //region
     //sort_by
-    //release_date.lte
-    //release_date.gte
     //with_companies
     //runtime.lte
     //runtime.gte
@@ -28,5 +30,7 @@ class UserMoviePreferences {
     
     //1
     var movieGenres : MovieGenres = MovieGenres(genres: [])
-    
+    var fromReleaseDate : String?
+    var untilReleaseDate : String?
+
 }

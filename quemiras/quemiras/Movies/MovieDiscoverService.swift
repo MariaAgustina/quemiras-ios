@@ -25,11 +25,21 @@ class MovieDiscoverService: NSObject {
         manager.responseSerializer = AFJSONResponseSerializer()
         
         let selectedGenres = userPreferences.movieGenres.genres.filter { $0.isSelected == true }
-        let params = [
+        var params = [
             "language": "es",
-            "include_adult":"false",
-            "with_genres" : MovieGenreAdapter.getMovieGenresParams(selectedGenres: selectedGenres)
+            "include_adult":"false"
             ]
+        
+        if (MovieGenreAdapter.getMovieGenresParams(selectedGenres: selectedGenres).count > 0){
+            params["with_genres"] = MovieGenreAdapter.getMovieGenresParams(selectedGenres: selectedGenres)
+        }
+        if (userPreferences.fromReleaseDate != nil) {
+            params["primary_release_date.gte"] = userPreferences.fromReleaseDate
+        }
+        
+        if (userPreferences.untilReleaseDate != nil){
+            params["primary_release_date.lte"] = userPreferences.untilReleaseDate
+        }
         
         let headers = ["Authorization":apikey,
                        "Content-Type":"application/json;charset=utf-8"]
