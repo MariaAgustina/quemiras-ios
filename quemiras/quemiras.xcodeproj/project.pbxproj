@@ -48,6 +48,8 @@
 		FB503B4624CC865300225C40 /* PopularityProfilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4524CC865300225C40 /* PopularityProfilePreference.swift */; };
 		FB503B4824CCBF5A00225C40 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4724CCBF5A00225C40 /* MovieDetail.swift */; };
 		FB503B4B24CCF3D000225C40 /* Heuristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4A24CCF3D000225C40 /* Heuristic.swift */; };
+		FB503B4E24CDFD2100225C40 /* NotFoundMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4C24CDFD2100225C40 /* NotFoundMovieViewController.swift */; };
+		FB503B4F24CDFD2100225C40 /* NotFoundMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB503B4D24CDFD2100225C40 /* NotFoundMovieViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,8 @@
 		FB503B4524CC865300225C40 /* PopularityProfilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityProfilePreference.swift; sourceTree = "<group>"; };
 		FB503B4724CCBF5A00225C40 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		FB503B4A24CCF3D000225C40 /* Heuristic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heuristic.swift; sourceTree = "<group>"; };
+		FB503B4C24CDFD2100225C40 /* NotFoundMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundMovieViewController.swift; sourceTree = "<group>"; };
+		FB503B4D24CDFD2100225C40 /* NotFoundMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotFoundMovieViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,8 @@
 				FB4F10CF24C79E83003625B4 /* MovieDiscoverService.swift */,
 				FB4F10D124C7B007003625B4 /* RecommendedMovieViewController.swift */,
 				FB4F10D224C7B007003625B4 /* RecommendedMovieViewController.xib */,
+				FB503B4C24CDFD2100225C40 /* NotFoundMovieViewController.swift */,
+				FB503B4D24CDFD2100225C40 /* NotFoundMovieViewController.xib */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 				FB48540624C9032800C3F5E2 /* SelectPreferenceTableViewCell.xib in Resources */,
 				FB503B3524CBAC4800225C40 /* SelectDateViewController.xib in Resources */,
 				FB44F6112482E6CE00C0D1E3 /* Main.storyboard in Resources */,
+				FB503B4F24CDFD2100225C40 /* NotFoundMovieViewController.xib in Resources */,
 				FB503B4224CC824300225C40 /* DurationTableViewCell.xib in Resources */,
 				FB4F10C924C7756E003625B4 /* ProfileViewController.xib in Resources */,
 				FB4F10D424C7B007003625B4 /* RecommendedMovieViewController.xib in Resources */,
@@ -553,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB503B4E24CDFD2100225C40 /* NotFoundMovieViewController.swift in Sources */,
 				FB4F10D024C79E83003625B4 /* MovieDiscoverService.swift in Sources */,
 				FB503B4B24CCF3D000225C40 /* Heuristic.swift in Sources */,
 				FB48540524C9032800C3F5E2 /* SelectPreferenceTableViewCell.swift in Sources */,

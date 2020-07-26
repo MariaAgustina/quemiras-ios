@@ -66,9 +66,12 @@ extension ProfileViewController : HeuristicMovieDelegate{
         self.navigationController?.pushViewController(recommendedMovieViewController, animated: true)
     }
     
-    func movieDiscoverFailed(error: Error){
-        //TODO: ups no se encontraron peliculas
+    func heuristicMovieNotFound(){
         self.hideActivityIndicartor()
+        let notFoundMovieViewController: NotFoundMovieViewController =
+            NotFoundMovieViewController(nibName:"NotFoundMovieViewController",bundle: nil)
+        self.navigationController?.pushViewController(notFoundMovieViewController, animated: true)
+
     }
 }
 

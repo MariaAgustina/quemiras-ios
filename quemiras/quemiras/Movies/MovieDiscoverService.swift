@@ -43,8 +43,8 @@ class MovieDiscoverService: NSObject {
         }
         
         params["sort_by"] = (userPreferences.mostPopular) ? "popularity.desc" : "popularity.asc"
-        params["with_runtime.gte"] = userPreferences.runtime // + heuristic suma tiempo
-        params["with_runtime.lte"] = userPreferences.runtime // + heuristic suma tiempo
+        params["with_runtime.gte"] = userPreferences.getUserMovieRuntimeGte()
+        params["with_runtime.lte"] = userPreferences.getUserMovieRuntimeLte()
 
         let headers = ["Authorization":apikey,
                        "Content-Type":"application/json;charset=utf-8"]

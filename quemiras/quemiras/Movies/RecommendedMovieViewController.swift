@@ -86,6 +86,14 @@ class RecommendedMovieViewController: LoadingViewController {
 }
 
 extension RecommendedMovieViewController : HeuristicMovieDelegate{
+    func heuristicMovieNotFound() {
+        self.hideActivityIndicartor()
+        let notFoundMovieViewController: NotFoundMovieViewController =
+            NotFoundMovieViewController(nibName:"NotFoundMovieViewController",bundle: nil)
+        self.navigationController?.pushViewController(notFoundMovieViewController, animated: true)
+
+    }
+    
     func heuristicMovieFound(movie : Movie){
         self.hideActivityIndicartor()
         

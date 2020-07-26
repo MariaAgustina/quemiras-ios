@@ -23,6 +23,18 @@ class UserMoviePreferences {
     var untilReleaseDate : String?
     var mostPopular : Bool = true
     var runtime : String = "90"
+    var runtimeOffset : Int = 0
 
     var seenMovies : Array<Int> = []
+    
+    func getUserMovieRuntimeLte() -> String{
+        let newRuntime = Int(runtime)! + runtimeOffset
+        return String(newRuntime)
+    }
+    
+    func getUserMovieRuntimeGte() -> String{
+        let newRuntime = Int(runtime)! - runtimeOffset
+        return String(newRuntime)
+    }
+
 }
