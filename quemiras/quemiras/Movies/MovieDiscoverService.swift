@@ -10,7 +10,7 @@ import UIKit
 import AFNetworking
 
 public protocol MovieDiscoverProtocol {
-    func movieDiscoverSucceded(movie: Movie)
+    func movieDiscoverSucceded(movies: MoviesArray)
     func movieDiscoverFailed(error: Error)
     
 }
@@ -56,18 +56,15 @@ class MovieDiscoverService: NSObject {
                 print(moviesArray)
                 
                 //TODO: do heuristic
-                if(moviesArray.results.count > 0){
-                    let movie: Movie = moviesArray.results[0]
-                
                     //to complete object with it Movie details
-                    self.getMovie(movie: movie)
-                }else{
+//                    self.getMovie(movie: movie)
+                self.delegate?.movieDiscoverSucceded(movies: moviesArray)
+//                }else{
                     //TODO: mostrar que no se encontro una peli
                     //self.delegate not founndddd
-                }
+//                }
                 
-            }
-            catch {
+            } catch {
                 print("Error decoding movie: " + error.localizedDescription)
                 self.delegate?.movieDiscoverFailed(error: error)
             }
@@ -98,16 +95,19 @@ class MovieDiscoverService: NSObject {
                 var movieWithDetails: Movie = movie
                 movieWithDetails.runtime = movieDetails.runtime
                 movieWithDetails.genres = movieDetails.genres
-                self.delegate?.movieDiscoverSucceded(movie: movieWithDetails)
+                //TODO
+//                self.delegate?.movieDiscoverSucceded(movie: movieWithDetails)
             }
             catch {
                 print("Error decoding movie: " + error.localizedDescription)
-                self.delegate?.movieDiscoverFailed(error: error)
+                //TODO
+//                self.delegate?.movieDiscoverFailed(error: error)
             }
            
         }) { (task: URLSessionDataTask?, error: Error) in
             print("error" + error.localizedDescription)
-            self.delegate?.movieDiscoverFailed(error: error)
+            //TODO
+//            self.delegate?.movieDiscoverFailed(error: error)
 
         }
     }

@@ -47,6 +47,7 @@
 		FB503B4424CC861B00225C40 /* DurationProfilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4324CC861B00225C40 /* DurationProfilePreference.swift */; };
 		FB503B4624CC865300225C40 /* PopularityProfilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4524CC865300225C40 /* PopularityProfilePreference.swift */; };
 		FB503B4824CCBF5A00225C40 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4724CCBF5A00225C40 /* MovieDetail.swift */; };
+		FB503B4B24CCF3D000225C40 /* Heuristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB503B4A24CCF3D000225C40 /* Heuristic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		FB503B4324CC861B00225C40 /* DurationProfilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationProfilePreference.swift; sourceTree = "<group>"; };
 		FB503B4524CC865300225C40 /* PopularityProfilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityProfilePreference.swift; sourceTree = "<group>"; };
 		FB503B4724CCBF5A00225C40 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		FB503B4A24CCF3D000225C40 /* Heuristic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heuristic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 		FB44F6082482E6CD00C0D1E3 /* quemiras */ = {
 			isa = PBXGroup;
 			children = (
+				FB503B4924CCF3B200225C40 /* Heuristic */,
 				FB48540224C902E300C3F5E2 /* ProfilePreferences */,
 				FB4F10D724C8EB80003625B4 /* Users */,
 				FB4F10CA24C795C3003625B4 /* Movies */,
@@ -293,6 +296,14 @@
 				FB503B3324CBAC4800225C40 /* SelectDateViewController.xib */,
 			);
 			path = SelectDate;
+			sourceTree = "<group>";
+		};
+		FB503B4924CCF3B200225C40 /* Heuristic */ = {
+			isa = PBXGroup;
+			children = (
+				FB503B4A24CCF3D000225C40 /* Heuristic.swift */,
+			);
+			path = Heuristic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -543,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB4F10D024C79E83003625B4 /* MovieDiscoverService.swift in Sources */,
+				FB503B4B24CCF3D000225C40 /* Heuristic.swift in Sources */,
 				FB48540524C9032800C3F5E2 /* SelectPreferenceTableViewCell.swift in Sources */,
 				FB48540A24C9079800C3F5E2 /* ProfilePreference.swift in Sources */,
 				FB4F10D324C7B007003625B4 /* RecommendedMovieViewController.swift in Sources */,

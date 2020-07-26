@@ -33,11 +33,8 @@
                             <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La naranja mecanica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-DZ-8CV">
-                            <rect key="frame" x="96" y="550.5" width="222.5" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="u6w-iN-1Lk"/>
-                            </constraints>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La naranja mecanica" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-DZ-8CV">
+                            <rect key="frame" x="20" y="550.5" width="374" height="20"/>
                             <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -50,36 +47,61 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5L-Fx-XCi">
-                            <rect key="frame" x="20" y="600.5" width="374" height="135"/>
+                            <rect key="frame" x="20" y="590.5" width="374" height="135"/>
                             <string key="text">Descripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etcDescripcion sobre la naranja mecanica es una pelicula situada en los años 70 etc etc</string>
                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXJ-5M-ykj">
-                            <rect key="frame" x="60" y="873.5" width="53.5" height="24"/>
+                            <rect key="frame" x="60" y="863.5" width="53.5" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duración" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWi-ew-EaP">
-                            <rect key="frame" x="60" y="785.5" width="78.5" height="24"/>
+                            <rect key="frame" x="60" y="775.5" width="78.5" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularidad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oI8-E4-A7j">
-                            <rect key="frame" x="60" y="917.5" width="104" height="24"/>
+                            <rect key="frame" x="60" y="907.5" width="104" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Géneros" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8C-Qq-ssx">
-                            <rect key="frame" x="60" y="829.5" width="294" height="24"/>
+                            <rect key="frame" x="60" y="819.5" width="294" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48u-Zs-0Kt">
+                            <rect key="frame" x="60" y="961.5" width="294" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46" id="ig5-K9-7ri"/>
+                            </constraints>
+                            <state key="normal" title="Obtener otra recomendación"/>
+                            <connections>
+                                <action selector="getAnotherRecommendationPressed:" destination="-1" eventType="touchUpInside" id="gVT-Wf-VL5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6P-qM-IMH">
+                            <rect key="frame" x="60" y="1027.5" width="294" height="46"/>
+                            <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46" id="P88-b6-AGa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <state key="normal" title="Voy a ver esta película">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="seeMovieButtonPressed:" destination="-1" eventType="touchUpInside" id="QDq-W8-dXS"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="oI8-E4-A7j" firstAttribute="leading" secondItem="IXJ-5M-ykj" secondAttribute="leading" id="2Nh-gA-mj9"/>
@@ -88,6 +110,8 @@
                         <constraint firstItem="s6M-C7-M82" firstAttribute="centerX" secondItem="XcJ-60-ybU" secondAttribute="centerX" id="9QG-sb-jnb"/>
                         <constraint firstItem="YP4-DZ-8CV" firstAttribute="centerX" secondItem="XcJ-60-ybU" secondAttribute="centerX" id="Br7-xs-x51"/>
                         <constraint firstItem="D5L-Fx-XCi" firstAttribute="centerX" secondItem="XcJ-60-ybU" secondAttribute="centerX" id="CnH-sm-0bs"/>
+                        <constraint firstItem="YP4-DZ-8CV" firstAttribute="trailing" secondItem="D5L-Fx-XCi" secondAttribute="trailing" id="DPG-xd-HYm"/>
+                        <constraint firstItem="48u-Zs-0Kt" firstAttribute="top" secondItem="oI8-E4-A7j" secondAttribute="bottom" constant="30" id="Epd-jR-Yb7"/>
                         <constraint firstItem="s6M-C7-M82" firstAttribute="top" secondItem="ZuK-nb-Wuw" secondAttribute="bottom" constant="25" id="Fe6-uS-jiT"/>
                         <constraint firstItem="IXJ-5M-ykj" firstAttribute="leading" secondItem="K8C-Qq-ssx" secondAttribute="leading" id="GVd-af-TbC"/>
                         <constraint firstItem="MWi-ew-EaP" firstAttribute="leading" secondItem="CP9-ih-JbF" secondAttribute="leading" constant="60" id="HMc-pC-SJk"/>
@@ -98,11 +122,17 @@
                         <constraint firstItem="CP9-ih-JbF" firstAttribute="trailing" secondItem="K8C-Qq-ssx" secondAttribute="trailing" constant="60" id="Y9n-7c-89y"/>
                         <constraint firstItem="D5L-Fx-XCi" firstAttribute="top" secondItem="YP4-DZ-8CV" secondAttribute="bottom" constant="20" id="Z9Y-OY-dMp"/>
                         <constraint firstItem="D5L-Fx-XCi" firstAttribute="leading" secondItem="XcJ-60-ybU" secondAttribute="leading" constant="20" id="bPe-7K-Fnr"/>
+                        <constraint firstItem="Q6P-qM-IMH" firstAttribute="leading" secondItem="48u-Zs-0Kt" secondAttribute="leading" id="d7Z-P6-PGy"/>
+                        <constraint firstItem="48u-Zs-0Kt" firstAttribute="leading" secondItem="ucb-gb-YYb" secondAttribute="leading" constant="60" id="ePo-Zs-bhL"/>
+                        <constraint firstItem="Q6P-qM-IMH" firstAttribute="trailing" secondItem="48u-Zs-0Kt" secondAttribute="trailing" id="fSd-Q5-gnk"/>
                         <constraint firstItem="K8C-Qq-ssx" firstAttribute="top" secondItem="MWi-ew-EaP" secondAttribute="bottom" constant="20" id="ggZ-XZ-C1R"/>
-                        <constraint firstAttribute="bottom" secondItem="oI8-E4-A7j" secondAttribute="bottom" constant="169.5" id="nuZ-Fd-ugH"/>
+                        <constraint firstAttribute="bottom" secondItem="Q6P-qM-IMH" secondAttribute="bottom" constant="38.5" id="iTf-0U-16D"/>
+                        <constraint firstItem="ucb-gb-YYb" firstAttribute="trailing" secondItem="48u-Zs-0Kt" secondAttribute="trailing" constant="60" id="l8a-5Q-IfZ"/>
+                        <constraint firstItem="YP4-DZ-8CV" firstAttribute="leading" secondItem="D5L-Fx-XCi" secondAttribute="leading" id="qli-Lc-ZNU"/>
                         <constraint firstItem="ZuK-nb-Wuw" firstAttribute="top" secondItem="CP9-ih-JbF" secondAttribute="top" constant="20" id="tNN-vf-nT7"/>
                         <constraint firstItem="IXJ-5M-ykj" firstAttribute="top" secondItem="K8C-Qq-ssx" secondAttribute="bottom" constant="20" id="wtE-0G-bQr"/>
                         <constraint firstItem="ZuK-nb-Wuw" firstAttribute="centerX" secondItem="XcJ-60-ybU" secondAttribute="centerX" id="xJ0-pJ-0hO"/>
+                        <constraint firstItem="Q6P-qM-IMH" firstAttribute="top" secondItem="48u-Zs-0Kt" secondAttribute="bottom" constant="20" id="ydC-3f-mBR"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="CP9-ih-JbF"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="ucb-gb-YYb"/>

@@ -15,9 +15,8 @@ class ProfileViewController: LoadingViewController {
     @IBOutlet weak var profileTitle: UILabel!
     @IBOutlet weak var profilePreferencesTableView: UITableView!
     
-    var userMoviePreferences : UserMoviePreferences = UserMoviePreferences()
     var preferenceToSelect : PreferenceToSelect = PreferenceToSelect()
-    
+    var heuristic : Heuristic = Heuristic()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +33,9 @@ class ProfileViewController: LoadingViewController {
         setupProfilePreferenceTableView()
         
         //TODO: obtener estas preferencias desde backend
-        self.userMoviePreferences = UserMoviePreferences()
+        self.heuristic = Heuristic()
+        self.heuristic.userMoviePreferences = UserMoviePreferences()
+
     }
     
     func setupProfilePreferenceTableView(){
@@ -46,40 +47,27 @@ class ProfileViewController: LoadingViewController {
 
     @IBAction func movieButtonPressed(_ sender: Any) {
         self.showActivityIndicator()
-        let service : MovieDiscoverService = MovieDiscoverService()
-        service.delegate = self
-        service.discoverMovies(userPreferences:self.userMoviePreferences)
+        heuristic.getMovieRecommendation()
+        heuristic.delegate = self
         
     }
 }
 
-extension ProfileViewController : LoginButtonDelegate {
-    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
-        //do nothing, only to logout
-    }
 
-    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
-        print("User logged out")
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController: LoginViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.navigationController?.popViewController(animated: true)
-        self.navigationController?.pushViewController(loginViewController, animated: false)
-
-    }
-}
-
-extension ProfileViewController : MovieDiscoverProtocol{
-    func movieDiscoverSucceded(movie: Movie){
+extension ProfileViewController : HeuristicMovieDelegate{
+    func heuristicMovieFound(movie: Movie) {
         self.hideActivityIndicartor()
         let recommendedMovieViewController: RecommendedMovieViewController =
             RecommendedMovieViewController(nibName:"RecommendedMovieViewController",bundle: nil)
         
-        
         recommendedMovieViewController.movie = movie
+        recommendedMovieViewController.delegate = self
+        recommendedMovieViewController.heuristic = self.heuristic
         self.navigationController?.pushViewController(recommendedMovieViewController, animated: true)
     }
     
     func movieDiscoverFailed(error: Error){
+        //TODO: ups no se encontraron peliculas
         self.hideActivityIndicartor()
     }
 }
@@ -93,7 +81,7 @@ extension ProfileViewController : UITableViewDelegate{
             case .selectGenre:
                 let selectGenreViewController: SelectGenreViewController =
                     SelectGenreViewController(nibName:"SelectGenreViewController",bundle: nil)
-                selectGenreViewController.movieGenres = self.userMoviePreferences.movieGenres
+                selectGenreViewController.movieGenres = heuristic.userMoviePreferences.movieGenres
                 selectGenreViewController.delegate = self
                 self.navigationController?.pushViewController(selectGenreViewController, animated: true)
                 break
@@ -101,7 +89,7 @@ extension ProfileViewController : UITableViewDelegate{
                 let selectDateViewController: SelectDateViewController =
                     SelectDateViewController(nibName:"SelectDateViewController",bundle: nil)
                 selectDateViewController.releaseDateType = .from
-                selectDateViewController.pickedDate = userMoviePreferences.fromReleaseDate
+                selectDateViewController.pickedDate = heuristic.userMoviePreferences.fromReleaseDate
                 selectDateViewController.delegate = self
                 self.navigationController?.pushViewController(selectDateViewController, animated: true)
                 break
@@ -109,7 +97,7 @@ extension ProfileViewController : UITableViewDelegate{
                 let selectDateViewController: SelectDateViewController =
                     SelectDateViewController(nibName:"SelectDateViewController",bundle: nil)
                 selectDateViewController.releaseDateType = .until
-                selectDateViewController.pickedDate = userMoviePreferences.untilReleaseDate
+                selectDateViewController.pickedDate = heuristic.userMoviePreferences.untilReleaseDate
                 selectDateViewController.delegate = self
                 self.navigationController?.pushViewController(selectDateViewController, animated: true)
                 break
@@ -138,7 +126,7 @@ extension ProfileViewController : UITableViewDataSource{
         switch profilePreference.preferenceType {
             case .selectGenre:
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "SelectPreferenceTableViewCell") as? SelectPreferenceTableViewCell {
-                        let selectedGenres = userMoviePreferences.movieGenres.genres.filter { $0.isSelected == true }
+                        let selectedGenres = heuristic.userMoviePreferences.movieGenres.genres.filter { $0.isSelected == true }
                         if selectedGenres.count > 0 {
                             cell.preferenceTitleLabel.text = "Géneros seleccionados: " + MovieGenreAdapter.getSelectedGenresTitle(selectedGenres: selectedGenres)
                         }else{
@@ -149,7 +137,7 @@ extension ProfileViewController : UITableViewDataSource{
                 return UITableViewCell()
             case .selectFromDate:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "SelectPreferenceTableViewCell") as? SelectPreferenceTableViewCell {
-                    if let fromDate = self.userMoviePreferences.fromReleaseDate {
+                    if let fromDate = heuristic.userMoviePreferences.fromReleaseDate {
                         cell.preferenceTitleLabel.text = "Fecha desde: " + fromDate
                     }else{
                         cell.preferenceTitleLabel.text = profilePreference.title
@@ -159,7 +147,7 @@ extension ProfileViewController : UITableViewDataSource{
                 return UITableViewCell()
             case .selectUntilDate:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "SelectPreferenceTableViewCell") as? SelectPreferenceTableViewCell {
-                   if let untilDate = self.userMoviePreferences.untilReleaseDate {
+                   if let untilDate = heuristic.userMoviePreferences.untilReleaseDate {
                        cell.preferenceTitleLabel.text = "Fecha hasta: " + untilDate
                    }else{
                        cell.preferenceTitleLabel.text = profilePreference.title
@@ -170,13 +158,13 @@ extension ProfileViewController : UITableViewDataSource{
             case .selectPopularity:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "PopularityTableViewCell") as? PopularityTableViewCell {
                     cell.delegate = self
-                    cell.popularitySwitch.isOn = self.userMoviePreferences.mostPopular
+                    cell.popularitySwitch.isOn = heuristic.userMoviePreferences.mostPopular
                     return cell
                 }
                 return UITableViewCell()
             case .selecDuration:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "DurationTableViewCell") as? DurationTableViewCell{
-                    cell.durationTextField.text = self.userMoviePreferences.runtime
+                    cell.durationTextField.text = heuristic.userMoviePreferences.runtime
                     cell.delegate = self
                     return cell
                 }
@@ -192,7 +180,7 @@ extension ProfileViewController : UITableViewDataSource{
 
 extension ProfileViewController : SelectGenreProtocol{
     func movieGenresDidChange(movieGenres: MovieGenres) {
-        self.userMoviePreferences.movieGenres = movieGenres
+        heuristic.userMoviePreferences.movieGenres = movieGenres
         self.profilePreferencesTableView.reloadData()
 
     }
@@ -202,10 +190,10 @@ extension ProfileViewController : SelectDateDelegate{
     func datePicked(date: String, type: ReleaseDateType) {
         switch type {
             case .from:
-                self.userMoviePreferences.fromReleaseDate = date
+                heuristic.userMoviePreferences.fromReleaseDate = date
                 break
             case .until:
-                self.userMoviePreferences.untilReleaseDate = date
+                heuristic.userMoviePreferences.untilReleaseDate = date
                 break
         }
         self.profilePreferencesTableView.reloadData()
@@ -214,16 +202,38 @@ extension ProfileViewController : SelectDateDelegate{
 }
     
     
-extension ProfileViewController : DurationSelectedDelegate{
+extension ProfileViewController: DurationSelectedDelegate{
     func durationSelected(duration: String){
-        self.userMoviePreferences.runtime = duration
+        heuristic.userMoviePreferences.runtime = duration
     }
 }
 
-extension ProfileViewController :PoplarityDelegate {
+extension ProfileViewController: PoplarityDelegate {
     func popularitySelected(popularity: Bool){
-        self.userMoviePreferences.mostPopular = popularity
+        heuristic.userMoviePreferences.mostPopular = popularity
         self.profilePreferencesTableView.reloadData()
     }
     
+}
+
+extension ProfileViewController: RecommendedMovieDelegate {
+    func otherRecommendationsSelected(movie: Movie) {
+        heuristic.userMoviePreferences.seenMovies.append(movie.id)
+    }
+
+}
+
+extension ProfileViewController : LoginButtonDelegate {
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        //do nothing, only to logout
+    }
+
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        print("User logged out")
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController: LoginViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.pushViewController(loginViewController, animated: false)
+
+    }
 }

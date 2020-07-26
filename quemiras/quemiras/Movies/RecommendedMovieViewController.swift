@@ -8,7 +8,11 @@
 
 import UIKit
 
-class RecommendedMovieViewController: UIViewController {
+protocol RecommendedMovieDelegate {
+    func otherRecommendationsSelected(movie :Movie)
+}
+
+class RecommendedMovieViewController: LoadingViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -20,19 +24,31 @@ class RecommendedMovieViewController: UIViewController {
     @IBOutlet weak var genresLabel: UILabel!
     
     public var movie : Movie?
-
+    public var delegate: RecommendedMovieDelegate?
+    public var heuristic : Heuristic = Heuristic()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "¿Qué miras?"
+        updateViewWithMovie(movie: self.movie)
+
         
-        self.titleLabel.text = self.movie?.title ?? ""
-        self.descriptionLabel.text = self.movie?.overview ?? ""
-        self.durationLabel.text = "Duración: " + "\(self.movie!.runtime!)"
-        self.dateLabel.text = "Fecha estreno: " + (self.movie?.release_date ?? "")
-        self.popularityLabel.text = "Popularidad: " +  String(describing: self.movie!.popularity)
-        self.genresLabel.text = "Géneros: " + MovieGenreAdapter.getSelectedGenresTitle(selectedGenres: movie!.genres!)
-        getMovieImage()
-        
+    }
+    
+    func updateViewWithMovie(movie: Movie?){
+        if let movieToShow = movie {
+            self.titleLabel.text = movieToShow.title
+            self.descriptionLabel.text = self.movie?.overview ?? ""
+            if let runtime = movieToShow.runtime{
+                self.durationLabel.text = "Duración: " + "\(runtime)"
+            }
+            self.dateLabel.text = "Fecha estreno: " + (movieToShow.release_date)
+            self.popularityLabel.text = "Popularidad: " +  String(describing: movieToShow.popularity)
+            if let genres = movieToShow.genres{
+                self.genresLabel.text = "Géneros: " + MovieGenreAdapter.getSelectedGenresTitle(selectedGenres: genres)
+            }
+            getMovieImage()
+        }
     }
     
     func getMovieImage(){
@@ -48,6 +64,34 @@ class RecommendedMovieViewController: UIViewController {
         }
     }
     
+    @IBAction func getAnotherRecommendationPressed(_ sender: UIButton) {
+        guard let movie = self.movie else {
+            return
+        }
+        
+        heuristic.userMoviePreferences.seenMovies.append(movie.id)
+        self.showActivityIndicator()
+        heuristic.delegate = self
+        heuristic.getMovieRecommendation()
+    }
+    
+    @IBAction func seeMovieButtonPressed(_ sender: UIButton) {
+        guard let movie = self.movie else {
+            return
+        }
+        heuristic.userMoviePreferences.seenMovies.append(movie.id)
+        navigationController?.popViewController(animated: true)
+    }
+    
+}
 
+extension RecommendedMovieViewController : HeuristicMovieDelegate{
+    func heuristicMovieFound(movie : Movie){
+        self.hideActivityIndicartor()
+        
+        self.movie = movie
+        updateViewWithMovie(movie: self.movie)
+
+    }
 
 }
