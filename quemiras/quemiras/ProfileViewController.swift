@@ -105,10 +105,8 @@ extension ProfileViewController : UITableViewDelegate{
                 self.navigationController?.pushViewController(selectDateViewController, animated: true)
                 break
             case .selecDuration:
-                //TODO
                 break
             case .selectPopularity:
-                //TODO
                 break
         }
 
@@ -119,7 +117,6 @@ extension ProfileViewController : UITableViewDelegate{
 extension ProfileViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //TODO: de acuerdo a las opciones que le meta
         self.preferenceToSelect.preferences.count
     }
     
