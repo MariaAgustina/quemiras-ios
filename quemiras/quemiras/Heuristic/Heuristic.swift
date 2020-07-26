@@ -15,9 +15,10 @@ class Heuristic: NSObject {
     
     var userMoviePreferences : UserMoviePreferences = UserMoviePreferences()
     var delegate : HeuristicMovieDelegate?
+    var service : MovieDiscoverService = MovieDiscoverService()
     
     public func getMovieRecommendation(){
-        let service : MovieDiscoverService = MovieDiscoverService()
+        service = MovieDiscoverService()
         service.delegate = self
         service.discoverMovies(userPreferences:self.userMoviePreferences)
     }
@@ -26,6 +27,7 @@ class Heuristic: NSObject {
 }
 
 extension Heuristic : MovieDiscoverProtocol{
+    
     func movieDiscoverSucceded(movies: MoviesArray){
         let filteredArray = movies.results.filter{
             !userMoviePreferences.seenMovies.contains($0.id)
@@ -33,9 +35,13 @@ extension Heuristic : MovieDiscoverProtocol{
 
         if(filteredArray.count > 0){
             let movie: Movie = filteredArray[0]
-            self.delegate?.heuristicMovieFound(movie: movie)
+            service.getMovie(movie: movie)
         }
         
+    }
+    
+    func movieDetailsSucceded(movie: Movie){
+        self.delegate?.heuristicMovieFound(movie: movie)
     }
     
     func movieDiscoverFailed(error: Error){

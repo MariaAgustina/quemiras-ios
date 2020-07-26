@@ -12,7 +12,8 @@ import AFNetworking
 public protocol MovieDiscoverProtocol {
     func movieDiscoverSucceded(movies: MoviesArray)
     func movieDiscoverFailed(error: Error)
-    
+    func movieDetailsSucceded(movie: Movie)
+
 }
 
 class MovieDiscoverService: NSObject {
@@ -55,15 +56,8 @@ class MovieDiscoverService: NSObject {
                 let moviesArray = try JSONDecoder().decode(MoviesArray.self, from: dataJson)
                 print(moviesArray)
                 
-                //TODO: do heuristic
-                    //to complete object with it Movie details
-//                    self.getMovie(movie: movie)
                 self.delegate?.movieDiscoverSucceded(movies: moviesArray)
-//                }else{
-                    //TODO: mostrar que no se encontro una peli
-                    //self.delegate not founndddd
-//                }
-                
+
             } catch {
                 print("Error decoding movie: " + error.localizedDescription)
                 self.delegate?.movieDiscoverFailed(error: error)
@@ -95,8 +89,7 @@ class MovieDiscoverService: NSObject {
                 var movieWithDetails: Movie = movie
                 movieWithDetails.runtime = movieDetails.runtime
                 movieWithDetails.genres = movieDetails.genres
-                //TODO
-//                self.delegate?.movieDiscoverSucceded(movie: movieWithDetails)
+                self.delegate?.movieDetailsSucceded(movie: movieWithDetails)
             }
             catch {
                 print("Error decoding movie: " + error.localizedDescription)
