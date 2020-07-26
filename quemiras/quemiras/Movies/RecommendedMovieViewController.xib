@@ -15,6 +15,7 @@
                 <outlet property="genresLabel" destination="K8C-Qq-ssx" id="xWk-ad-yTT"/>
                 <outlet property="movieImageView" destination="s6M-C7-M82" id="Gu6-jN-pbo"/>
                 <outlet property="popularityLabel" destination="oI8-E4-A7j" id="pr0-FM-lgo"/>
+                <outlet property="scrollView" destination="XcJ-60-ybU" id="9fI-nG-bxL"/>
                 <outlet property="titleLabel" destination="YP4-DZ-8CV" id="373-qZ-Fcv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

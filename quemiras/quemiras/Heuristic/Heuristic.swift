@@ -37,13 +37,14 @@ extension Heuristic : MovieDiscoverProtocol{
 
         if(filteredArray.count > 0){
             self.retryTimes = 0
+            self.userMoviePreferences.monthOffset = 0
             let movie: Movie = filteredArray[0]
             service.getMovie(movie: movie)
         }else{
             print("Movies not found!")
             if (retryTimes <= 10){
                 retryTimes+=1
-                self.userMoviePreferences.runtimeOffset += 5
+                self.userMoviePreferences.monthOffset += 1
                 self.getMovieRecommendation()
             }else{
                 self.delegate?.heuristicMovieNotFound()

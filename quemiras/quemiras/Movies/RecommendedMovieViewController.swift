@@ -18,6 +18,7 @@ class RecommendedMovieViewController: LoadingViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var popularityLabel: UILabel!
@@ -98,7 +99,9 @@ extension RecommendedMovieViewController : HeuristicMovieDelegate{
         self.hideActivityIndicartor()
         
         self.movie = movie
+        self.scrollView.setContentOffset(.zero, animated: true)
         updateViewWithMovie(movie: self.movie)
+        
 
     }
 
