@@ -47,6 +47,7 @@ extension Heuristic : MovieDiscoverProtocol{
                 self.userMoviePreferences.monthOffset += 1
                 self.getMovieRecommendation()
             }else{
+                self.userMoviePreferences.monthOffset = 0
                 self.delegate?.heuristicMovieNotFound()
                 print("NO RESULTS FOUND :(")
             }
